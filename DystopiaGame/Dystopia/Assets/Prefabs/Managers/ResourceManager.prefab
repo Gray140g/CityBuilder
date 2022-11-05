@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3837695273036728328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7809475874677974290}
+  - component: {fileID: 9069077085737419046}
+  - component: {fileID: 7962343113162510298}
+  - component: {fileID: 6089210204482081587}
+  - component: {fileID: 2925523023393658030}
+  - component: {fileID: -8710251550617908026}
+  - component: {fileID: 8694995395696300810}
+  - component: {fileID: 1854897049818861078}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: ResourceManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7809475874677974290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9069077085737419046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d5838a1bf8b949a19cf73f59509be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peasantHousingBuildings: []
+  eliteHousingBuildings: []
+  materialGatheringBuildings: []
+  foodGatheringBuildings: []
+  otherBuildings: []
+--- !u!114 &7962343113162510298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b27520e3602a0d4186dcdc5601d3f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  time: 10
+--- !u!114 &6089210204482081587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc7b3eb21f6e8d41b58276d46b2ef0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  eliteText: {fileID: 0}
+  peasantText: {fileID: 0}
+  foodText: {fileID: 0}
+  materialsText: {fileID: 0}
+--- !u!114 &2925523023393658030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d27655873bcc4c409a1eaf8532135f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 0}
+  grouping: {fileID: 0}
+  totalPeasants: 10
+  housedPeasants: 0
+  homelessPeasants: 10
+  workingPeasants: 0
+  totalElites: 10
+  housedElites: 0
+  homelessElites: 10
+  availablePeasantHousing: 0
+  availableEliteHousing: 0
+--- !u!114 &-8710251550617908026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8118e47995a49242bf0bc35da1eaa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: 200
+  dailyFood: 0
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &8694995395696300810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bcc8686661d6c343bb9a4bbd27c3b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  materials: 200
+  dailyMaterials: 0
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &1854897049818861078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90860ec29e157434c85f2d055670112b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 0}
+  propType: 0
+  propAmount: 0
+  dailyProp: 0
+  maxWorkers: 0
+  workers: 0
