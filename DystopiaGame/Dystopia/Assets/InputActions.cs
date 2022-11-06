@@ -73,9 +73,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Reload"",
+                    ""name"": ""Command"",
                     ""type"": ""Button"",
-                    ""id"": ""edabe0a8-ea11-4ce3-a4ef-7a7b61c36427"",
+                    ""id"": ""12af9b3f-86be-4e75-b3d8-49ddc1096f2c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -349,12 +349,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""26ad1fc5-5084-4a13-9489-bcc552e6a550"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""id"": ""feda6140-c156-49a8-b070-4ab337796b0b"",
+                    ""path"": ""<Keyboard>/slash"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Reload"",
+                    ""action"": ""Command"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -431,7 +431,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_PlaceSelect = m_Player.FindAction("Place/Select", throwIfNotFound: true);
         m_Player_RotateBuilding = m_Player.FindAction("RotateBuilding", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
-        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_Command = m_Player.FindAction("Command", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -496,7 +496,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PlaceSelect;
     private readonly InputAction m_Player_RotateBuilding;
     private readonly InputAction m_Player_Zoom;
-    private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_Command;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -506,7 +506,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @PlaceSelect => m_Wrapper.m_Player_PlaceSelect;
         public InputAction @RotateBuilding => m_Wrapper.m_Player_RotateBuilding;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
-        public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @Command => m_Wrapper.m_Player_Command;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -531,9 +531,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Zoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
                 @Zoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
                 @Zoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
-                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Command.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
+                @Command.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
+                @Command.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -553,9 +553,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Zoom.started += instance.OnZoom;
                 @Zoom.performed += instance.OnZoom;
                 @Zoom.canceled += instance.OnZoom;
-                @Reload.started += instance.OnReload;
-                @Reload.performed += instance.OnReload;
-                @Reload.canceled += instance.OnReload;
+                @Command.started += instance.OnCommand;
+                @Command.performed += instance.OnCommand;
+                @Command.canceled += instance.OnCommand;
             }
         }
     }
@@ -612,6 +612,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnPlaceSelect(InputAction.CallbackContext context);
         void OnRotateBuilding(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
-        void OnReload(InputAction.CallbackContext context);
+        void OnCommand(InputAction.CallbackContext context);
     }
 }

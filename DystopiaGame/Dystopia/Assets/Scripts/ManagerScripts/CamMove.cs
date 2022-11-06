@@ -17,32 +17,39 @@ public class CamMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = moveVector.normalized * speed * Time.fixedDeltaTime;
+        if(!opener.buildIsOpen && !opener.commandIsOpen)
+        {
+            rb.velocity = moveVector.normalized * speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void Move(InputAction.CallbackContext ctx)
     {
-        if(!opener.buildIsOpen)
-        {
-            moveVector = ctx.ReadValue<Vector2>();
-        }
+        moveVector = ctx.ReadValue<Vector2>();
     }
 
     public void Zoom(InputAction.CallbackContext ctx)
     {
-        if(ctx.ReadValue<float>() > 0)
+        if(!opener.buildIsOpen && !opener.commandIsOpen)
         {
-            if(cam.orthographicSize + .5f < max)
+            if (ctx.ReadValue<float>() > 0)
             {
-                cam.orthographicSize  += .5f;
+                if (cam.orthographicSize + .5f < max)
+                {
+                    cam.orthographicSize += .5f;
+                }
             }
-        }
 
-        if(ctx.ReadValue<float>() < 0)
-        {
-            if(cam.orthographicSize - .5f > min)
+            if (ctx.ReadValue<float>() < 0)
             {
-                cam.orthographicSize -= .5f;
+                if (cam.orthographicSize - .5f > min)
+                {
+                    cam.orthographicSize -= .5f;
+                }
             }
         }
     }

@@ -4,6 +4,7 @@ public class MenuOpener : MonoBehaviour
 {
     public bool buildIsOpen = false;
     public bool editIsOpen = false;
+    public bool commandIsOpen = false;
 
     public void CloseBuild()
     {

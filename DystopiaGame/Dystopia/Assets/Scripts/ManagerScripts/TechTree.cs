@@ -7,7 +7,7 @@ public class TechTree : MonoBehaviour
     [SerializeField] private Button[] techTreeButtons;
     [SerializeField] private Button[] buildMenuButtons;
     [SerializeField] private int[] parentIndex;
-    [SerializeField] private bool[] isUnlocked;
+    public bool[] isUnlocked;
     [SerializeField] private int[] costs;
 
     [SerializeField] private Sprite[] icons;
@@ -23,6 +23,27 @@ public class TechTree : MonoBehaviour
 
     [SerializeField] private Materials mat;
 
+    private void Start()
+    {
+        CheckUnlocks();
+    }
+
+    public void CheckUnlocks()
+    {
+        for (int i = 0; i < isUnlocked.Length; i++)
+        {
+            if(isUnlocked[i] == true)
+            {
+                buildMenuButtons[i].interactable = true;
+                techTreeButtons[i].interactable = false;
+            }
+            else
+            {
+                buildMenuButtons[i].interactable = false;
+                techTreeButtons[i].interactable = true;
+            }
+        }
+    }
 
     public void Unlock()
     {
