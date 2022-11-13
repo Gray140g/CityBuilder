@@ -14,6 +14,7 @@ public class Building : MonoBehaviour
     public bool canPlace = true;
     public bool justPlaced = false;
     public bool rotate = false;
+    public bool outLineRotate = false;
     public bool destroyed = false;
     public int cost;
     public int typeInt;

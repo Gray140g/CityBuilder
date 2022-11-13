@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e347b49c14914fb2b0690cccd9da7, type: 3}
+  m_Name: TestLaw
+  m_EditorClassIdentifier: 
+  content: {fileID: 0}
+  posType: 0
+  negType: 1
+  lawName: Test
+  desc: This is a test that adds happiness and subtracts fear.
+  icon: {fileID: 21300000, guid: a6ffaf0d79a1e9a4d80bb1af7ffec78d, type: 3}
+  unlocked: 1
+  addAmount: 10
+  subAmount: -30

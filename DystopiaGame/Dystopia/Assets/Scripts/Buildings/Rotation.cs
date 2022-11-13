@@ -6,24 +6,46 @@ public class Rotation : MonoBehaviour
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private Sprite[] sprites;
     private int i;
+    [SerializeField] private bool isOutline = false;
 
     private void Update()
     {
         if (parentBuilding.beingPlaced)
         {
-            if(parentBuilding.rotate)
+            if(!isOutline)
             {
-                if (i != 3)
+                if (parentBuilding.rotate)
                 {
-                    i++;
-                    parentBuilding.rotate = false;
-                    render.sprite = sprites[i];
+                    if (i != 3)
+                    {
+                        i++;
+                        parentBuilding.rotate = false;
+                        render.sprite = sprites[i];
+                    }
+                    else
+                    {
+                        i = 0;
+                        parentBuilding.rotate = false;
+                        render.sprite = sprites[i];
+                    }
                 }
-                else
+            }
+            else
+            {
+                if (parentBuilding.outLineRotate)
                 {
-                    i = 0;
-                    parentBuilding.rotate = false;
-                    render.sprite = sprites[i];
+                    if (i != 3)
+                    {
+                        i++;
+                        parentBuilding.outLineRotate = false;
+                        render.sprite = sprites[i];
+                    }
+                    else
+                    {
+                        i = 0;
+                        parentBuilding.outLineRotate = false;
+                        render.sprite = sprites[i];
+                    }
                 }
             }
         }

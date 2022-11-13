@@ -46,6 +46,14 @@ public class ClickManager : MonoBehaviour
             {
                 if (collisions.Count >= 1)
                 {
+                    if(current != null)
+                    {
+                        if(current.outline != null)
+                        {
+                            current.outline.SetActive(false);
+                        }
+                    }
+
                     current = collisions[0];
 
                     for (int i = 1; i < collisions.Count; i++)
@@ -86,6 +94,11 @@ public class ClickManager : MonoBehaviour
 
             currentType = type;
             opener.editIsOpen = true;
+
+            if(current.outline != null)
+            {
+                current.outline.SetActive(true);
+            }
         }
     }
 
@@ -127,5 +140,13 @@ public class ClickManager : MonoBehaviour
     public void ChangeType(int newType)
     {
         current.Change(newType);
+    }
+
+    public void Exit()
+    {
+        if (current.outline != null)
+        {
+            current.outline.SetActive(false);
+        }
     }
 }

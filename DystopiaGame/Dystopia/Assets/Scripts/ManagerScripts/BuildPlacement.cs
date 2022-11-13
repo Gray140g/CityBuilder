@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class BuildPlacement : MonoBehaviour
 {
     [SerializeField] private GameObject buildingObject;
+    private GameObject currentBuildingType;
     [SerializeField] private Camera cam;
     private Building buildingScript;
     private SpriteRenderer spriteRender;
@@ -20,6 +21,8 @@ public class BuildPlacement : MonoBehaviour
 
     [SerializeField] private Vector3 offSet;
     [SerializeField] private Vector3 tempPos;
+
+    private Vector3 originalPos;
 
     [SerializeField] private GameObject openTiles;
     [SerializeField] private Tilemap map;
@@ -61,6 +64,8 @@ public class BuildPlacement : MonoBehaviour
         }
     }
 
+    #region Input
+
     public void Place(InputAction.CallbackContext ctx)
     {
         if(ctx.performed)
@@ -75,22 +80,59 @@ public class BuildPlacement : MonoBehaviour
                     buildingScript.beingPlaced = false;
                     spriteRender.sortingOrder = 0;
                     spriteRender.color = normalColor;
+                    grouping.AddToList(buildingObject, buildingScript.typeInt);
 
                     if (!editing)
                     {
                         mat.materials -= currentCost;
+                        StartBuild(currentBuildingType);
                     }
                     else
                     {
                         editing = false;
                     }
-
-                    grouping.AddToList(buildingObject, buildingScript.typeInt);
                 }
             }
         }
     }
 
+    public void EndBuilding(InputAction.CallbackContext ctx)
+    {
+        if(ctx.performed)
+        {
+            if(!editing)
+            {
+                Destroy(buildingObject);
+                openTiles.SetActive(false);
+                placingBuilding = false;
+            }
+            else
+            {
+                buildingObject.transform.position = originalPos;
+                spriteRender.sortingOrder = 0;
+                spriteRender.color = normalColor;
+                openTiles.SetActive(false);
+                placingBuilding = false;
+                editing = false;
+            }
+        }
+    }
+
+    public void Rotate(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            if (placingBuilding)
+            {
+                buildingScript.rotate = true;
+                buildingScript.outLineRotate = true;
+            }
+        }
+    }
+
+    #endregion
+
+    #region MoveBuilding
     public void GetCost(int cost)
     {
         currentCost = cost;
@@ -101,6 +143,7 @@ public class BuildPlacement : MonoBehaviour
         if(mat.materials >= currentCost)
         {
             CloseMenu();
+            currentBuildingType = building;
             buildingObject = Instantiate(building, cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Quaternion.identity);
             buildingScript = buildingObject.GetComponent<Building>();
             spriteRender = buildingObject.GetComponent<SpriteRenderer>();
@@ -118,6 +161,7 @@ public class BuildPlacement : MonoBehaviour
         buildingScript = buildingObject.GetComponent<Building>();
         spriteRender = buildingObject.GetComponent<SpriteRenderer>();
         placingBuilding = true;
+        originalPos = buildingObject.transform.position;
         editing = true;
         buildingScript.beingPlaced = true;
         openTiles.SetActive(true);
@@ -133,18 +177,9 @@ public class BuildPlacement : MonoBehaviour
         grouping.RemoveFromList(buildingObject, buildingScript.typeInt);
     }
 
+    #endregion
 
-    public void Rotate(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            if(placingBuilding)
-            {
-                buildingScript.rotate = true;
-            }
-        }
-    }
-
+    #region Menu
     public void OpenMenu()
     {
         buildMenu.SetActive(true);
@@ -160,4 +195,6 @@ public class BuildPlacement : MonoBehaviour
 
         opener.buildIsOpen = false;
     }
+
+    #endregion
 }

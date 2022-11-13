@@ -4,6 +4,8 @@ public class BuildClick : MonoBehaviour
 {
     private ClickManager click;
 
+    public GameObject outline;
+
     [SerializeField] private Sprite buildingSprite;
     [SerializeField] private string buildingName;
     [SerializeField] private int type;

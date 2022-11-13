@@ -59,6 +59,10 @@ public class Commands : MonoBehaviour
             TimeManager time = GameObject.FindGameObjectWithTag("GameManager").GetComponent<TimeManager>();
             time.Reload();
         }
+        else if(input.ToLower() == "/quit")
+        {
+            Application.Quit();
+        }
 
         Deselect("hi");
         bar.SetActive(false);

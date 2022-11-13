@@ -80,6 +80,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EndBuild"",
+                    ""type"": ""Button"",
+                    ""id"": ""6bfe7f02-7563-42f7-b947-9016504b1b9c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -357,6 +366,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Command"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95e4710c-faa8-4966-888a-9fbfc6c02166"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EndBuild"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -432,6 +452,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_RotateBuilding = m_Player.FindAction("RotateBuilding", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_Command = m_Player.FindAction("Command", throwIfNotFound: true);
+        m_Player_EndBuild = m_Player.FindAction("EndBuild", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -497,6 +518,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateBuilding;
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_Command;
+    private readonly InputAction m_Player_EndBuild;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -507,6 +529,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @RotateBuilding => m_Wrapper.m_Player_RotateBuilding;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputAction @Command => m_Wrapper.m_Player_Command;
+        public InputAction @EndBuild => m_Wrapper.m_Player_EndBuild;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -534,6 +557,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Command.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
                 @Command.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
                 @Command.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCommand;
+                @EndBuild.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEndBuild;
+                @EndBuild.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEndBuild;
+                @EndBuild.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEndBuild;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -556,6 +582,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Command.started += instance.OnCommand;
                 @Command.performed += instance.OnCommand;
                 @Command.canceled += instance.OnCommand;
+                @EndBuild.started += instance.OnEndBuild;
+                @EndBuild.performed += instance.OnEndBuild;
+                @EndBuild.canceled += instance.OnEndBuild;
             }
         }
     }
@@ -613,5 +642,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnRotateBuilding(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnCommand(InputAction.CallbackContext context);
+        void OnEndBuild(InputAction.CallbackContext context);
     }
 }
