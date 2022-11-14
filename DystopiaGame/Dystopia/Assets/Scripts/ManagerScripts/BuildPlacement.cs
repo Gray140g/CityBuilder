@@ -6,9 +6,12 @@ public class BuildPlacement : MonoBehaviour
 {
     [SerializeField] private GameObject buildingObject;
     private GameObject currentBuildingType;
-    [SerializeField] private Camera cam;
     private Building buildingScript;
     private SpriteRenderer spriteRender;
+    private BuildTime buildTime;
+
+    [SerializeField] private Camera cam;
+    [SerializeField] private CamMove camMove;
 
     [SerializeField] private GameObject cursor;
 
@@ -53,13 +56,16 @@ public class BuildPlacement : MonoBehaviour
 
             canPlace = buildingScript.canPlace;
 
-            if(canPlace)
+            if(spriteRender != null)
             {
-                spriteRender.color = green;
-            }
-            else
-            {
-                spriteRender.color = red;
+                if (canPlace)
+                {
+                    spriteRender.color = green;
+                }
+                else
+                {
+                    spriteRender.color = red;
+                }
             }
         }
     }
@@ -74,13 +80,20 @@ public class BuildPlacement : MonoBehaviour
             {
                 if(canPlace)
                 {
-                    buildingScript.OnPlace();
+                    buildTime.OnPlace();
                     openTiles.SetActive(false);
                     placingBuilding = false;
                     buildingScript.beingPlaced = false;
-                    spriteRender.sortingOrder = 0;
-                    spriteRender.color = normalColor;
+
+                    if (spriteRender != null)
+                    {
+                        spriteRender.sortingOrder = 0;
+                        spriteRender.color = normalColor;
+                        spriteRender = null;
+                    }
+
                     grouping.AddToList(buildingObject, buildingScript.typeInt);
+                    camMove.MoveToBuilding(buildingObject.transform.position);
 
                     if (!editing)
                     {
@@ -146,12 +159,16 @@ public class BuildPlacement : MonoBehaviour
             currentBuildingType = building;
             buildingObject = Instantiate(building, cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Quaternion.identity);
             buildingScript = buildingObject.GetComponent<Building>();
-            spriteRender = buildingObject.GetComponent<SpriteRenderer>();
+            buildTime = buildingObject.GetComponent<BuildTime>();
+            if (buildTime.outline != null)
+            {
+                spriteRender = buildTime.outline;
+                spriteRender.sortingOrder = 100;
+            }
             placingBuilding = true;
             editing = false;
             buildingScript.beingPlaced = true;
             openTiles.SetActive(true);
-            spriteRender.sortingOrder = 100;
         }
     }
 
@@ -159,13 +176,16 @@ public class BuildPlacement : MonoBehaviour
     {
         buildingObject = click.current.gameObject.GetComponentInParent<Building>().gameObject;
         buildingScript = buildingObject.GetComponent<Building>();
-        spriteRender = buildingObject.GetComponent<SpriteRenderer>();
+        if(buildTime.outline != null)
+        {
+            spriteRender = buildTime.outline;
+            spriteRender.sortingOrder = 100;
+        }
         placingBuilding = true;
         originalPos = buildingObject.transform.position;
         editing = true;
         buildingScript.beingPlaced = true;
         openTiles.SetActive(true);
-        spriteRender.sortingOrder = 100;
     }
 
     public void DestroyBuilding()

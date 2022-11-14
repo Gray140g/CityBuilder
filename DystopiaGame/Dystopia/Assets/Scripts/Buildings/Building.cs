@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    [SerializeField] private Collider2D thisCollider;
-    [SerializeField] private LayerMask layer;
     private BuildPlacement placement;
+    [SerializeField] private LayerMask layer;
+    [SerializeField] private Collider2D thisCollider;
 
     [SerializeField] private GameObject clickCollider;
 

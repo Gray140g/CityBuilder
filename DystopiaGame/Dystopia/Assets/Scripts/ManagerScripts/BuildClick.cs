@@ -3,12 +3,11 @@ using UnityEngine;
 public class BuildClick : MonoBehaviour
 {
     private ClickManager click;
-
     public GameObject outline;
 
     [SerializeField] private Sprite buildingSprite;
     [SerializeField] private string buildingName;
-    [SerializeField] private int type;
+    public int type;
 
     public bool added;
     public bool subtracted;
@@ -58,5 +57,10 @@ public class BuildClick : MonoBehaviour
     {
         typeChange = true;
         typeForChange = newType;
+    }
+
+    public void TimeChange()
+    {
+        val -= 1;
     }
 }

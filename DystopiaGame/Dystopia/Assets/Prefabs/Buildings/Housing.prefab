@@ -183,6 +183,7 @@ MonoBehaviour:
   buildingSprite: {fileID: 21300000, guid: 6438237d97d08bc4a960766c37600e9b, type: 3}
   buildingName: Peasant Housing
   type: 2
+  inProgress: 1
   added: 0
   subtracted: 0
   typeChange: 0
@@ -204,6 +205,7 @@ GameObject:
   - component: {fileID: 9209800139879786283}
   - component: {fileID: 9016609468209549708}
   - component: {fileID: 193257691052800979}
+  - component: {fileID: -8013541870904205833}
   m_Layer: 6
   m_Name: Housing
   m_TagString: Building
@@ -348,10 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: 7271458725803329658}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: 7271458725803329658}
   clickCollider: {fileID: 2378136490871344126}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
@@ -397,6 +399,30 @@ MonoBehaviour:
   - {fileID: 5258608941787355872, guid: 7ad091fcd053c74439189d0380ba6a8d, type: 3}
   - {fileID: 3542371399500583536, guid: 7ad091fcd053c74439189d0380ba6a8d, type: 3}
   isOutline: 0
+--- !u!114 &-8013541870904205833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809724833603216857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 9209800139879786283}
+  click: {fileID: 8392547716715673964}
+  rotation: {fileID: 193257691052800979}
+  outlineRotation: {fileID: 4736921206413595705}
+  render: {fileID: 2809724833603216856}
+  outline: {fileID: 3311310652598935895}
+  inProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  outlineInProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2,
+    type: 3}
+  totalTime: 100
+  seconds: 100
+  trueType: 0
 --- !u!1 &4513285577189986460
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8698544544737258834
 Transform:
   m_ObjectHideFlags: 0

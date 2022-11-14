@@ -12,6 +12,10 @@ public class CamMove : MonoBehaviour
     private Vector2 moveVector;
     [SerializeField] private int speed;
 
+    private Vector3 moveTowards;
+    private bool needsToFollowBuilding = false;
+    [SerializeField] private int step;
+
     [SerializeField] private int min;
     [SerializeField] private int max;
 
@@ -19,11 +23,23 @@ public class CamMove : MonoBehaviour
     {
         if(!opener.buildIsOpen && !opener.commandIsOpen)
         {
-            rb.velocity = moveVector.normalized * speed * Time.fixedDeltaTime;
+            if(!needsToFollowBuilding)
+            {
+                rb.velocity = moveVector.normalized * speed * Time.fixedDeltaTime;
+            }
         }
         else
         {
             rb.velocity = Vector2.zero;
+        }
+
+        if(needsToFollowBuilding && cam.transform.position != moveTowards)
+        {
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, moveTowards, step * Time.fixedDeltaTime);
+        }
+        else
+        {
+            needsToFollowBuilding = false;
         }
     }
 
@@ -52,5 +68,12 @@ public class CamMove : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoveToBuilding(Vector3 buildingPos)
+    {
+        moveTowards = buildingPos;
+        moveTowards.z = -10;
+        needsToFollowBuilding = true;
     }
 }

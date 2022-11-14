@@ -50,4 +50,9 @@ public class Rotation : MonoBehaviour
             }
         }
     }
+
+    public void ShowSprite()
+    {
+        render.sprite = sprites[i];
+    }
 }

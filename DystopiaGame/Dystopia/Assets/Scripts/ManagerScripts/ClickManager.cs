@@ -22,6 +22,9 @@ public class ClickManager : MonoBehaviour
     [SerializeField] private Image[] buildingImages;
     [SerializeField] private TextMeshProUGUI[] nameTexts;
     [SerializeField] private TextMeshProUGUI[] valTexts;
+    [SerializeField] private Slider timeSlider;
+    [SerializeField] private TextMeshProUGUI timeSliderText;
+
     private bool hasVals;
     private int currentType;
 
@@ -86,6 +89,13 @@ public class ClickManager : MonoBehaviour
             {
                 valTexts[type].text = current.val + "/" + current.maxVal;
                 hasVals = true;
+            } 
+            else if (type == 5)
+            {
+                timeSlider.maxValue = current.maxVal;
+                timeSlider.value = current.val;
+                timeSliderText.text = (current.maxVal - current.val) + " seconds";
+                hasVals = true;
             }
             else
             {
@@ -122,7 +132,15 @@ public class ClickManager : MonoBehaviour
 
     private void UpdateVals()
     {
-        valTexts[currentType].text = current.val + "/" + current.maxVal;
+        if(currentType != 5)
+        {
+            valTexts[currentType].text = current.val + "/" + current.maxVal;
+        }
+        else
+        {
+            timeSliderText.text = (current.maxVal - current.val) + " seconds";
+            timeSlider.value = current.val;
+        }
     }
 
     public void Add()
