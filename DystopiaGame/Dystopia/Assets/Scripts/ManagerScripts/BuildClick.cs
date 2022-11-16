@@ -11,6 +11,8 @@ public class BuildClick : MonoBehaviour
 
     public bool added;
     public bool subtracted;
+    public bool max;
+    public bool min;
     public bool typeChange;
     public int typeForChange;
 
@@ -51,6 +53,16 @@ public class BuildClick : MonoBehaviour
     public void Remove()
     {
         subtracted = true;
+    }
+
+    public void Max()
+    {
+        max = true;
+    }
+
+    public void Min()
+    {
+        min = true;
     }
 
     public void Change(int newType)

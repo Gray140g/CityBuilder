@@ -101,11 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 0}
   buildingSprite: {fileID: 21300000, guid: 5d4750cd2fecb5c46b5360a4ba14e189, type: 3}
   buildingName: Elite Housing
   type: 2
   added: 0
   subtracted: 0
+  max: 0
+  min: 0
   typeChange: 0
   typeForChange: 0
   val: 0
@@ -124,6 +127,7 @@ GameObject:
   - component: {fileID: 7227183097953913349}
   - component: {fileID: 2233946627051925655}
   - component: {fileID: 7510543994070397464}
+  - component: {fileID: -8604350206984860570}
   m_Layer: 6
   m_Name: EliteHousing
   m_TagString: Building
@@ -266,16 +270,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: 9084401325905212599}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: 9084401325905212599}
   clickCollider: {fileID: 3700363943650983543}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
+  outLineRotate: 0
   destroyed: 0
   cost: 100
   typeInt: 1
@@ -295,6 +300,28 @@ MonoBehaviour:
     type: 3}
   isElite: 1
   rooms: 10
+--- !u!114 &-8604350206984860570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597222852011272294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 2233946627051925655}
+  click: {fileID: 7762919780447396125}
+  rotation: {fileID: 0}
+  outlineRotation: {fileID: 0}
+  render: {fileID: -3761351807764782292}
+  outline: {fileID: 0}
+  inProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  outlineInProgressSprite: {fileID: 0}
+  totalTime: 10
+  seconds: 10
 --- !u!1 &7367006256060952462
 GameObject:
   m_ObjectHideFlags: 0

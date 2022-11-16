@@ -110,11 +110,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 0}
   buildingSprite: {fileID: 21300000, guid: 8e2465f8c0215814096f4d34a90949cb, type: 3}
   buildingName: Police Station
   type: 0
   added: 0
   subtracted: 0
+  max: 0
+  min: 0
   typeChange: 0
   typeForChange: 0
   val: 0
@@ -134,6 +137,7 @@ GameObject:
   - component: {fileID: 906158792829122976}
   - component: {fileID: 5396093741155476153}
   - component: {fileID: 5831852380231802564}
+  - component: {fileID: -7034417982056284989}
   m_Layer: 6
   m_Name: Police
   m_TagString: Building
@@ -276,16 +280,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: 1708539776772183793}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: 1708539776772183793}
   clickCollider: {fileID: 5934702493094794613}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
+  outLineRotate: 0
   destroyed: 0
   cost: 50
   typeInt: 5
@@ -319,6 +324,28 @@ MonoBehaviour:
   workers: 0
   maxWorkers: 20
   type: 3
+--- !u!114 &-7034417982056284989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170704626540542802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 906158792829122976}
+  click: {fileID: 514759863190415335}
+  rotation: {fileID: 0}
+  outlineRotation: {fileID: 0}
+  render: {fileID: 6170704626540542803}
+  outline: {fileID: 0}
+  inProgressSprite: {fileID: 21300000, guid: 336d793f584bd3c499f19db4bd3dcd39, type: 3}
+  outlineInProgressSprite: {fileID: 0}
+  totalTime: 10
+  seconds: 10
 --- !u!1 &7395722199048304671
 GameObject:
   m_ObjectHideFlags: 0

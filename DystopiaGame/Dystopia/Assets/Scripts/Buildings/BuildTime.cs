@@ -23,7 +23,10 @@ public class BuildTime : MonoBehaviour
     {
         StartCoroutine("TimeTick");
         render.sprite = inProgressSprite;
-        outline.sprite = outlineInProgressSprite;
+        if(outline != null)
+        {
+            outline.sprite = outlineInProgressSprite;
+        }
         trueType = click.type;
         click.type = 5;
         trueMax = click.maxVal;
@@ -38,10 +41,17 @@ public class BuildTime : MonoBehaviour
     private void FinishBuild()
     {
         parentBuilding.OnPlace();
-        rotation.ShowSprite();
-        outlineRotation.ShowSprite();
+        if(rotation != null)
+        {
+            rotation.ShowSprite();
+        }
+        if(outline != null)
+        {
+            outlineRotation.ShowSprite();
+        }
         click.type = trueType;
         click.maxVal = trueMax;
+        Destroy(this);
     }
 
     private IEnumerator TimeTick()

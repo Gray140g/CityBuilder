@@ -85,7 +85,7 @@ public class ClickManager : MonoBehaviour
             nameTexts[type].text = name;
             buildingImages[type].sprite = image;
 
-            if (type != 2 && type != 3)
+            if (type != 2 && type != 3 && type != 5)
             {
                 valTexts[type].text = current.val + "/" + current.maxVal;
                 hasVals = true;
@@ -94,7 +94,7 @@ public class ClickManager : MonoBehaviour
             {
                 timeSlider.maxValue = current.maxVal;
                 timeSlider.value = current.val;
-                timeSliderText.text = (current.maxVal - current.val) + " seconds";
+                timeSliderText.text = current.val.ToString() + " seconds";
                 hasVals = true;
             }
             else
@@ -138,7 +138,7 @@ public class ClickManager : MonoBehaviour
         }
         else
         {
-            timeSliderText.text = (current.maxVal - current.val) + " seconds";
+            timeSliderText.text = current.val.ToString() + " seconds";
             timeSlider.value = current.val;
         }
     }
@@ -152,6 +152,18 @@ public class ClickManager : MonoBehaviour
     public void Remove()
     {
         current.Remove();
+        UpdateVals();
+    }
+
+    public void Max()
+    {
+        current.Max();
+        UpdateVals();
+    }
+
+    public void Min()
+    {
+        current.Min();
         UpdateVals();
     }
 

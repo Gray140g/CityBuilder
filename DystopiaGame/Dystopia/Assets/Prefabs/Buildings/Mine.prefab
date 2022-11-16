@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8796791428823199604}
   - component: {fileID: 834306945561847614}
   - component: {fileID: 3047455984523197920}
+  - component: {fileID: 6900596201034979152}
   m_Layer: 6
   m_Name: Mine
   m_TagString: Building
@@ -156,16 +157,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: -554305936041946595}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: -554305936041946595}
   clickCollider: {fileID: 0}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
+  outLineRotate: 0
   destroyed: 0
   cost: 25
   typeInt: 3
@@ -200,6 +202,28 @@ MonoBehaviour:
   workers: 0
   maxWorkers: 10
   type: 0
+--- !u!114 &6900596201034979152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693944835961668353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 0}
+  click: {fileID: 0}
+  rotation: {fileID: 0}
+  outlineRotation: {fileID: 0}
+  render: {fileID: 0}
+  outline: {fileID: 0}
+  inProgressSprite: {fileID: 0}
+  outlineInProgressSprite: {fileID: 0}
+  totalTime: 1
+  seconds: 1
 --- !u!1 &2560079413497177789
 GameObject:
   m_ObjectHideFlags: 0

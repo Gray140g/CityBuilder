@@ -12,6 +12,8 @@ public class Workers : MonoBehaviour
 
     public int workers;
     public int maxWorkers;
+
+    //0 = money, 1 = food, 2 = propaganda, 3 = police
     public int type;
 
     private void Start()
@@ -33,6 +35,21 @@ public class Workers : MonoBehaviour
         if (thisClick.subtracted)
         {
             Subtract(1, false);
+        }
+
+        if(thisClick.max)
+        {
+            Maximize();
+        }
+
+        if(thisClick.min)
+        {
+            Minimize();
+        }
+
+        if(thisClick.typeForChange != type)
+        {
+            type = thisClick.typeForChange;
         }
     }
 
@@ -115,5 +132,110 @@ public class Workers : MonoBehaviour
         }
 
         thisClick.subtracted = false;
+    }
+
+    private void Maximize()
+    {
+        if(type == 2 || type == 3)
+        {
+            if((pop.totalElites - pop.workingElites) > (maxWorkers - workers))
+            {
+                int dif = maxWorkers - workers;
+                pop.workingElites += dif;
+                workers = maxWorkers;
+                thisClick.val = maxWorkers;
+
+                if (type == 2)
+                {
+                    prop.workers += dif;
+                }
+                else
+                {
+                    crime.police += dif;
+                }
+            }
+            else
+            {
+                int unemployed = pop.totalElites - pop.workingElites;
+                pop.workingElites = pop.totalElites;
+                workers += unemployed;
+                thisClick.val += unemployed;
+
+                if (type == 2)
+                {
+                    prop.workers += unemployed;
+                }
+                else
+                {
+                    crime.police += unemployed;
+                }
+            }
+        }
+        else
+        {
+            if ((pop.totalPeasants - pop.workingPeasants) > (maxWorkers - workers))
+            {
+                int dif = maxWorkers - workers;
+                pop.workingPeasants += dif;
+                workers = maxWorkers;
+                thisClick.val = maxWorkers;
+
+                if (type == 0)
+                {
+                    mat.workers += dif;
+                }
+                else
+                {
+                    food.workers += dif;
+                }
+            }
+            else
+            {
+                int unemployed = pop.totalPeasants - pop.workingPeasants;
+                pop.workingPeasants = pop.totalPeasants;
+                workers += unemployed;
+                thisClick.val += unemployed;
+
+                if (type == 0)
+                {
+                    mat.workers += unemployed;
+                }
+                else
+                {
+                    food.workers += unemployed;
+                }
+            }
+        }
+
+        thisClick.max = false;
+    }
+
+    private void Minimize()
+    {
+        if(type == 0)
+        {
+            mat.workers -= workers;
+            pop.workingPeasants -= workers;
+        }
+        else if(type == 1)
+        {
+            food.workers -= workers;
+            pop.workingPeasants -= workers;
+        }
+        else if(type == 2)
+        {
+            prop.workers -= workers;
+            pop.workingElites -= workers;
+        }
+        else if(type == 3)
+        {
+            crime.police -= workers;
+            pop.workingElites -= workers;
+        }
+
+        thisClick.val = 0;
+        workers = 0;
+
+        thisClick.min = false;
     }
 }

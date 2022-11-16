@@ -80,7 +80,6 @@ public class BuildPlacement : MonoBehaviour
             {
                 if(canPlace)
                 {
-                    buildTime.OnPlace();
                     openTiles.SetActive(false);
                     placingBuilding = false;
                     buildingScript.beingPlaced = false;
@@ -97,11 +96,13 @@ public class BuildPlacement : MonoBehaviour
 
                     if (!editing)
                     {
+                        buildTime.OnPlace();
                         mat.materials -= currentCost;
                         StartBuild(currentBuildingType);
                     }
                     else
                     {
+                        buildingScript.EditPlace();
                         editing = false;
                     }
                 }
@@ -176,9 +177,9 @@ public class BuildPlacement : MonoBehaviour
     {
         buildingObject = click.current.gameObject.GetComponentInParent<Building>().gameObject;
         buildingScript = buildingObject.GetComponent<Building>();
-        if(buildTime.outline != null)
+        if(buildingScript.outline != null)
         {
-            spriteRender = buildTime.outline;
+            spriteRender = buildingScript.outline.GetComponent<SpriteRenderer>();
             spriteRender.sortingOrder = 100;
         }
         placingBuilding = true;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7786318847770028228}
   - component: {fileID: 6452528137052106910}
   - component: {fileID: 6387706520310084050}
+  - component: {fileID: -8894868149862482883}
   m_Layer: 6
   m_Name: Factory
   m_TagString: Building
@@ -152,16 +153,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: 100116991655870685}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: 100116991655870685}
   clickCollider: {fileID: 6111138632784394988}
   offSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
+  outLineRotate: 0
   destroyed: 0
   cost: 100
   typeInt: 3
@@ -198,6 +200,28 @@ MonoBehaviour:
   workers: 0
   maxWorkers: 50
   type: 0
+--- !u!114 &-8894868149862482883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328133767238897788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 7786318847770028228}
+  click: {fileID: 5233992477324301921}
+  rotation: {fileID: 0}
+  outlineRotation: {fileID: 0}
+  render: {fileID: 3427426531347149739}
+  outline: {fileID: 0}
+  inProgressSprite: {fileID: 21300000, guid: 7498278182d2cd940ab89615d7855a71, type: 3}
+  outlineInProgressSprite: {fileID: 0}
+  totalTime: 10
+  seconds: 10
 --- !u!1 &6111138632784394988
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,11 +330,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 0}
   buildingSprite: {fileID: 21300000, guid: 9f0f95fbf9d84b9478bc85f01304a849, type: 3}
   buildingName: Factory
   type: 1
   added: 0
   subtracted: 0
+  max: 0
+  min: 0
   typeChange: 0
   typeForChange: 0
   val: 0

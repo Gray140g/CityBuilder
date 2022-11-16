@@ -183,9 +183,10 @@ MonoBehaviour:
   buildingSprite: {fileID: 21300000, guid: 6438237d97d08bc4a960766c37600e9b, type: 3}
   buildingName: Peasant Housing
   type: 2
-  inProgress: 1
   added: 0
   subtracted: 0
+  max: 0
+  min: 0
   typeChange: 0
   typeForChange: 0
   val: 0
@@ -355,6 +356,7 @@ MonoBehaviour:
     m_Bits: 64
   thisCollider: {fileID: 7271458725803329658}
   clickCollider: {fileID: 2378136490871344126}
+  outline: {fileID: 4513285577189986460}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
@@ -417,12 +419,12 @@ MonoBehaviour:
   outlineRotation: {fileID: 4736921206413595705}
   render: {fileID: 2809724833603216856}
   outline: {fileID: 3311310652598935895}
-  inProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
-  outlineInProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2,
+  inProgressSprite: {fileID: 5722719141091856455, guid: 7ad091fcd053c74439189d0380ba6a8d,
     type: 3}
-  totalTime: 100
-  seconds: 100
-  trueType: 0
+  outlineInProgressSprite: {fileID: 5722719141091856455, guid: 7ad091fcd053c74439189d0380ba6a8d,
+    type: 3}
+  totalTime: 10
+  seconds: 10
 --- !u!1 &4513285577189986460
 GameObject:
   m_ObjectHideFlags: 0

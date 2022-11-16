@@ -179,11 +179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 0}
   buildingSprite: {fileID: 21300000, guid: 668f86e1d99f19648bb5ed0ad57bd6e6, type: 3}
   buildingName: Farm
   type: 0
   added: 0
   subtracted: 0
+  max: 0
+  min: 0
   typeChange: 0
   typeForChange: 0
   val: 0
@@ -203,6 +206,7 @@ GameObject:
   - component: {fileID: 5238592977957397074}
   - component: {fileID: 3190963062468585384}
   - component: {fileID: 6471741750312312459}
+  - component: {fileID: -4873248832906447882}
   m_Layer: 6
   m_Name: WheatFields
   m_TagString: Building
@@ -340,16 +344,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aad9986e9c818419237c527e1370e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCollider: {fileID: 7778258294924544793}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  thisCollider: {fileID: 7778258294924544793}
   clickCollider: {fileID: 6448143378919410233}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
+  outLineRotate: 0
   destroyed: 0
   cost: 25
   typeInt: 4
@@ -384,3 +389,25 @@ MonoBehaviour:
   workers: 0
   maxWorkers: 10
   type: 1
+--- !u!114 &-4873248832906447882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752569335881146904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cd8138ce80f245938106bac9fa6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 5238592977957397074}
+  click: {fileID: 3950946013423496207}
+  rotation: {fileID: 0}
+  outlineRotation: {fileID: 0}
+  render: {fileID: 7049264284698932510}
+  outline: {fileID: 0}
+  inProgressSprite: {fileID: 21300000, guid: c9f3f6e0c2249f84581d8ca7e32878b9, type: 3}
+  outlineInProgressSprite: {fileID: 0}
+  totalTime: 10
+  seconds: 10

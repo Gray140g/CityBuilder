@@ -7,6 +7,7 @@ public class Building : MonoBehaviour
     [SerializeField] private Collider2D thisCollider;
 
     [SerializeField] private GameObject clickCollider;
+    public GameObject outline;
 
     public Vector3 offSet;
 
@@ -51,6 +52,14 @@ public class Building : MonoBehaviour
     public void OnPlace()
     {
         justPlaced = true;
+    }
+
+    public void EditPlace()
+    {
+        if(outline != null)
+        {
+            outline.SetActive(false);
+        }
     }
 
     public void DestroySelf()
