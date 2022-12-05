@@ -10,6 +10,7 @@ TagManager:
   - BalanceManager
   - Clicker
   - GameManager
+  - BuildingManager
   layers:
   - Default
   - TransparentFX

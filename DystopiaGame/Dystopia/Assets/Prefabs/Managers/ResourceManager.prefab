@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7809475874677974290}
-  - component: {fileID: 9069077085737419046}
   - component: {fileID: 7962343113162510298}
   - component: {fileID: 6089210204482081587}
+  - component: {fileID: 3422659334457777863}
   - component: {fileID: 2925523023393658030}
   - component: {fileID: -8710251550617908026}
   - component: {fileID: 8694995395696300810}
@@ -37,23 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9069077085737419046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3837695273036728328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3d5838a1bf8b949a19cf73f59509be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peasantHousingBuildings: []
-  eliteHousingBuildings: []
-  materialGatheringBuildings: []
-  foodGatheringBuildings: []
-  otherBuildings: []
 --- !u!114 &7962343113162510298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +52,9 @@ MonoBehaviour:
   pop: {fileID: 2925523023393658030}
   food: {fileID: -8710251550617908026}
   mat: {fileID: 8694995395696300810}
+  prop: {fileID: 1854897049818861078}
+  content: {fileID: 0}
+  crime: {fileID: 0}
   time: 10
 --- !u!114 &6089210204482081587
 MonoBehaviour:
@@ -89,6 +75,30 @@ MonoBehaviour:
   peasantText: {fileID: 0}
   foodText: {fileID: 0}
   materialsText: {fileID: 0}
+  ignoranceText: {fileID: 0}
+--- !u!114 &3422659334457777863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecfa07aeb0c1bb4682da541222ffd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceName: {fileID: 0}
+  desc: {fileID: 0}
+  icon: {fileID: 0}
+  eliteSprite: {fileID: 21300000, guid: 7b3e2f97303ddbd40b1c7b0fbad3f689, type: 3}
+  peasantSprite: {fileID: 21300000, guid: 0fd77ff996e3cf644a952e397e8d8287, type: 3}
+  foodSprite: {fileID: 21300000, guid: 56c1a84a1b03b864fbaf2e9cd95b5937, type: 3}
+  matSprite: {fileID: 21300000, guid: eafd6da71fe19004db99dfd4611ad0f4, type: 3}
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  opener: {fileID: 0}
 --- !u!114 &2925523023393658030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d27655873bcc4c409a1eaf8532135f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
   grouping: {fileID: 0}
   totalPeasants: 10
   housedPeasants: 0
@@ -110,8 +119,11 @@ MonoBehaviour:
   totalElites: 10
   housedElites: 0
   homelessElites: 10
+  workingElites: 0
   availablePeasantHousing: 0
+  totalPeasantHousing: 0
   availableEliteHousing: 0
+  totalEliteHousing: 0
 --- !u!114 &-8710251550617908026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +141,7 @@ MonoBehaviour:
   dailyFood: 0
   maxWorkers: 0
   workers: 0
+  eat: 0
 --- !u!114 &8694995395696300810
 MonoBehaviour:
   m_ObjectHideFlags: 0

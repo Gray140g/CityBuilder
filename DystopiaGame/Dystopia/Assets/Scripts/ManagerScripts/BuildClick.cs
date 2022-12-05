@@ -3,6 +3,7 @@ using UnityEngine;
 public class BuildClick : MonoBehaviour
 {
     private ClickManager click;
+    public Workers workers;
     public GameObject outline;
 
     [SerializeField] private Sprite buildingSprite;
@@ -45,30 +46,11 @@ public class BuildClick : MonoBehaviour
         click.OnClick(buildingName, buildingSprite, type);
     }
 
-    public void Add()
-    {
-        added = true;
-    }
-
-    public void Remove()
-    {
-        subtracted = true;
-    }
-
-    public void Max()
-    {
-        max = true;
-    }
-
-    public void Min()
-    {
-        min = true;
-    }
-
     public void Change(int newType)
     {
         typeChange = true;
         typeForChange = newType;
+        workers.TypeChange();
     }
 
     public void TimeChange()

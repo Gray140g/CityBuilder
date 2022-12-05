@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 6543961507852610869}
   - component: {fileID: 7614800994868318089}
   - component: {fileID: 711838397774081306}
+  - component: {fileID: 4898578240812357807}
   - component: {fileID: 9007489148445227214}
+  - component: {fileID: 7362573725824249472}
+  - component: {fileID: 4548394925675629088}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: InputManager
@@ -123,6 +126,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 115fce87-9434-42ec-8d90-ba4ff4a151da
     m_ActionName: Player/Zoom[/Keyboard/i,/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a346911-b62f-42c6-ae31-0847d2edac51
+    m_ActionName: Player/CursorMove
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12af9b3f-86be-4e75-b3d8-49ddc1096f2c
+    m_ActionName: Player/Command[/Keyboard/slash]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6bfe7f02-7563-42f7-b947-9016504b1b9c
+    m_ActionName: Player/EndBuild[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -140,12 +155,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06950fc9a3c3b36429126ef9c42fcf5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opener: {fileID: 0}
   cam: {fileID: 0}
   rb: {fileID: 0}
   camObject: {fileID: 0}
-  speed: 0
-  min: 0
-  max: 0
+  speed: 400
+  step: 75
+  min: 4
+  max: 20
+--- !u!114 &4898578240812357807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380847583751941923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7107b8764b9ff4bbc9bf05f84da549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 0}
+  rb: {fileID: 0}
+  cam: {fileID: 0}
+  inp: {fileID: 7614800994868318089}
+  offSet: {x: 0, y: 0}
+  speed: 40000
 --- !u!114 &9007489148445227214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,11 +193,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e29ef2d4d237dd468ea4a7811bb5496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingObject: {fileID: 0}
   cam: {fileID: 0}
-  offSet: {x: 0, y: 0, z: 0}
+  camMove: {fileID: 711838397774081306}
+  cursor: {fileID: 0}
+  click: {fileID: 0}
+  grouping: {fileID: 0}
+  opener: {fileID: 0}
+  buildMenu: {fileID: 0}
+  menuObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  offSet: {x: -5, y: -5, z: 15}
   tempPos: {x: 0, y: 0, z: 0}
   openTiles: {fileID: 0}
   map: {fileID: 0}
   red: {r: 1, g: 0, b: 0, a: 1}
-  normalColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  green: {r: 0, g: 1, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   placingBuilding: 0
+--- !u!114 &7362573725824249472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380847583751941923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e281deda13b0cf4d9fd833c386dbd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placement: {fileID: 9007489148445227214}
+  opener: {fileID: 0}
+  cam: {fileID: 0}
+  clicker: {fileID: 0}
+  cursor: {fileID: 0}
+  inp: {fileID: 7614800994868318089}
+  offSet: {x: 0, y: 0, z: 15}
+  current: {fileID: 0}
+  collisions: []
+  screens:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildingImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nameTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  valTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  timeSlider: {fileID: 0}
+  timeSliderText: {fileID: 0}
+--- !u!114 &4548394925675629088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380847583751941923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c425d71fecded114eac802c7a7474207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildIsOpen: 0
+  editIsOpen: 0
+  commandIsOpen: 0

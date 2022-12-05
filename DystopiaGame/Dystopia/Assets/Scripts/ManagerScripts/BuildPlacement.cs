@@ -114,20 +114,23 @@ public class BuildPlacement : MonoBehaviour
     {
         if(ctx.performed)
         {
-            if(!editing)
+            if(placingBuilding || editing)
             {
-                Destroy(buildingObject);
-                openTiles.SetActive(false);
-                placingBuilding = false;
-            }
-            else
-            {
-                buildingObject.transform.position = originalPos;
-                spriteRender.sortingOrder = 0;
-                spriteRender.color = normalColor;
-                openTiles.SetActive(false);
-                placingBuilding = false;
-                editing = false;
+                if (!editing)
+                {
+                    openTiles.SetActive(false);
+                    placingBuilding = false;
+                    Destroy(buildingObject);
+                }
+                else
+                {
+                    buildingObject.transform.position = originalPos;
+                    spriteRender.sortingOrder = 0;
+                    spriteRender.color = normalColor;
+                    openTiles.SetActive(false);
+                    placingBuilding = false;
+                    editing = false;
+                }
             }
         }
     }
@@ -191,11 +194,14 @@ public class BuildPlacement : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        buildingObject = click.current.gameObject.GetComponentInParent<Building>().gameObject;
-        buildingScript = buildingObject.GetComponent<Building>();
-        buildingScript.DestroySelf();
-        mat.materials += buildingScript.cost;
-        grouping.RemoveFromList(buildingObject, buildingScript.typeInt);
+        if(!placingBuilding && !editing)
+        {
+            buildingObject = click.current.gameObject.GetComponentInParent<Building>().gameObject;
+            buildingScript = buildingObject.GetComponent<Building>();
+            buildingScript.DestroySelf();
+            mat.materials += buildingScript.cost;
+            grouping.RemoveFromList(buildingObject, buildingScript.typeInt);
+        }
     }
 
     #endregion

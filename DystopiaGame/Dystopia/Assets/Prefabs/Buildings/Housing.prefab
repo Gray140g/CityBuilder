@@ -140,12 +140,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0132107735, y: 0.7093599}
-      - {x: -0.84921694, y: 0.2580972}
-      - {x: -0.82541096, y: -1.4794612}
-      - {x: 0.010946035, y: -1.8955483}
-      - {x: 0.8338978, y: -1.4964345}
-      - {x: 0.8237568, y: 0.24961066}
+    - - {x: 0.86194515, y: 0.5110229}
+      - {x: 0.8766444, y: 1.5320823}
+      - {x: 0.006369829, y: 1.9680997}
+      - {x: -0.8491933, y: 1.5504713}
+      - {x: -0.8492143, y: 0.5190591}
+      - {x: -0.93814796, y: 0.47801346}
+      - {x: -0.9518316, y: -1.4931929}
+      - {x: -0.804888, y: -1.568394}
+      - {x: -0.75594956, y: -1.5581052}
+      - {x: -0.18345845, y: -1.8366574}
+      - {x: -0.17377853, y: -1.89134}
+      - {x: 0.002841115, y: -1.9765979}
+      - {x: 0.19474852, y: -1.8818854}
+      - {x: 0.1888746, y: -1.8418006}
+      - {x: 0.75031114, y: -1.5551312}
+      - {x: 0.8043771, y: -1.579603}
+      - {x: 0.96357703, y: -1.4923819}
+      - {x: 0.9742584, y: 0.44799906}
 --- !u!50 &14977917837974446
 Rigidbody2D:
   serializedVersion: 4
@@ -179,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workers: {fileID: 0}
   outline: {fileID: 4513285577189986460}
   buildingSprite: {fileID: 21300000, guid: 6438237d97d08bc4a960766c37600e9b, type: 3}
   buildingName: Peasant Housing
@@ -277,7 +290,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9375, y: 4}
+  m_Size: {x: 2, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -300,8 +313,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9375, y: 4}
-    newSize: {x: 1.9375, y: 4}
+    oldSize: {x: 2, y: 4}
+    newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -503,7 +516,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9375, y: 4}
+  m_Size: {x: 2, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

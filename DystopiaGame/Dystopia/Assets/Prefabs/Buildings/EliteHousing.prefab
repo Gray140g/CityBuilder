@@ -58,16 +58,26 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0035604239, y: 0.69580376}
-      - {x: -0.82991636, y: 0.2703614}
-      - {x: -0.8157606, y: -1.4885635}
-      - {x: -0.23996222, y: -1.7813816}
-      - {x: 0.60229015, y: -1.3533165}
-      - {x: 0.5890907, y: -0.6908855}
-      - {x: 0.7086811, y: -0.6415549}
-      - {x: 0.71017194, y: -0.41886613}
-      - {x: 0.8382143, y: -0.36312237}
-      - {x: 0.8430574, y: 0.27478486}
+    - - {x: 0.72777784, y: 1.5809582}
+      - {x: 0.18394113, y: 1.8442153}
+      - {x: 0.17169952, y: 1.9050033}
+      - {x: -0.0071176887, y: 1.9835432}
+      - {x: -0.18010896, y: 1.8886251}
+      - {x: -0.18556869, y: 1.8454397}
+      - {x: -0.688673, y: 1.5823944}
+      - {x: -0.8095478, y: 1.5845178}
+      - {x: -0.9508141, y: 1.5103216}
+      - {x: -0.96100444, y: -1.2153031}
+      - {x: -0.7994062, y: -1.3021339}
+      - {x: -0.77483207, y: -1.2906486}
+      - {x: -0.77851987, y: -1.4773912}
+      - {x: -0.0016214848, y: -1.8633113}
+      - {x: 0.7726109, y: -1.4712309}
+      - {x: 0.76596224, y: -1.2808516}
+      - {x: 0.7981051, y: -1.3085091}
+      - {x: 0.96726596, y: -1.2162303}
+      - {x: 0.9544468, y: 1.4965961}
+      - {x: 0.7983526, y: 1.5980461}
 --- !u!50 &1073158236594679218
 Rigidbody2D:
   serializedVersion: 4
@@ -101,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outline: {fileID: 0}
+  workers: {fileID: 0}
+  outline: {fileID: 4401753890231238156}
   buildingSprite: {fileID: 21300000, guid: 5d4750cd2fecb5c46b5360a4ba14e189, type: 3}
   buildingName: Elite Housing
   type: 2
@@ -113,6 +124,110 @@ MonoBehaviour:
   typeForChange: 0
   val: 0
   maxVal: 0
+--- !u!1 &4401753890231238156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3224886969531492953}
+  - component: {fileID: 6913354644805809095}
+  - component: {fileID: 7339635512665196124}
+  m_Layer: 6
+  m_Name: Outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3224886969531492953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401753890231238156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8484412765702619342}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6913354644805809095
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401753890231238156}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1889707699
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1753777665280728743, guid: ce2bb7caa44218347a035487a2837008,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &7339635512665196124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401753890231238156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d021ef04b7a574d802b6209ae840f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 2233946627051925655}
+  render: {fileID: 6913354644805809095}
+  sprites:
+  - {fileID: 1753777665280728743, guid: ce2bb7caa44218347a035487a2837008, type: 3}
+  - {fileID: -7619551241552426977, guid: ce2bb7caa44218347a035487a2837008, type: 3}
+  - {fileID: 1538724434761399717, guid: ce2bb7caa44218347a035487a2837008, type: 3}
+  - {fileID: 6177311079936884077, guid: ce2bb7caa44218347a035487a2837008, type: 3}
+  isOutline: 1
 --- !u!1 &6597222852011272294
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +243,7 @@ GameObject:
   - component: {fileID: 2233946627051925655}
   - component: {fileID: 7510543994070397464}
   - component: {fileID: -8604350206984860570}
+  - component: {fileID: 6988567797737941559}
   m_Layer: 6
   m_Name: EliteHousing
   m_TagString: Building
@@ -148,6 +264,7 @@ Transform:
   m_Children:
   - {fileID: 8169187691873947156}
   - {fileID: 1805217079445396471}
+  - {fileID: 3224886969531492953}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,12 +308,13 @@ SpriteRenderer:
   m_SortingLayerID: -1889707699
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  m_Sprite: {fileID: -2046082914358631274, guid: 65ed0e8b38d76fc4886032fa14d72af2,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 2.56}
+  m_Size: {x: 2, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -219,8 +337,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9375, y: 4}
-    newSize: {x: 1.24, y: 2.56}
+    oldSize: {x: 2, y: 4}
+    newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -275,6 +393,7 @@ MonoBehaviour:
     m_Bits: 64
   thisCollider: {fileID: 9084401325905212599}
   clickCollider: {fileID: 3700363943650983543}
+  outline: {fileID: 4401753890231238156}
   offSet: {x: 0.5, y: 0.5, z: 0}
   beingPlaced: 0
   canPlace: 1
@@ -296,8 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6eb5fbbd309034ab2b1df6364780df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBuilding: {fileID: 9209800139879786283, guid: 04523aca85c102e4b9256d26c2518915,
-    type: 3}
+  parentBuilding: {fileID: 2233946627051925655}
   isElite: 1
   rooms: 10
 --- !u!114 &-8604350206984860570
@@ -314,14 +432,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBuilding: {fileID: 2233946627051925655}
   click: {fileID: 7762919780447396125}
-  rotation: {fileID: 0}
-  outlineRotation: {fileID: 0}
+  rotation: {fileID: 6988567797737941559}
+  outlineRotation: {fileID: 7339635512665196124}
   render: {fileID: -3761351807764782292}
-  outline: {fileID: 0}
-  inProgressSprite: {fileID: 21300000, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
-  outlineInProgressSprite: {fileID: 0}
+  outline: {fileID: 6913354644805809095}
+  inProgressSprite: {fileID: -2046082914358631274, guid: 65ed0e8b38d76fc4886032fa14d72af2,
+    type: 3}
+  outlineInProgressSprite: {fileID: 1753777665280728743, guid: ce2bb7caa44218347a035487a2837008,
+    type: 3}
   totalTime: 10
   seconds: 10
+--- !u!114 &6988567797737941559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597222852011272294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d021ef04b7a574d802b6209ae840f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 2233946627051925655}
+  render: {fileID: -3761351807764782292}
+  sprites:
+  - {fileID: -2046082914358631274, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  - {fileID: 8273934066030804892, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  - {fileID: 3505587013796334739, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  - {fileID: -4149451980576804623, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
+  isOutline: 0
 --- !u!1 &7367006256060952462
 GameObject:
   m_ObjectHideFlags: 0

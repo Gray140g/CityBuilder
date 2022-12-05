@@ -145,25 +145,25 @@ public class ClickManager : MonoBehaviour
 
     public void Add()
     {
-        current.Add();
+        current.workers.Add();
         UpdateVals();
     }
 
     public void Remove()
     {
-        current.Remove();
+        current.workers.Subtract(1, false);
         UpdateVals();
     }
 
     public void Max()
     {
-        current.Max();
+        current.workers.Maximize();
         UpdateVals();
     }
 
     public void Min()
     {
-        current.Min();
+        current.workers.Minimize();
         UpdateVals();
     }
 

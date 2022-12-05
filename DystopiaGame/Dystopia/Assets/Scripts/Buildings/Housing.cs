@@ -18,11 +18,28 @@ public class Housing : MonoBehaviour
         {
             OnPlace();
         }
+
+        if(parentBuilding.destroyed)
+        {
+            OnDestroy();
+        }
     }
 
     public void OnPlace()
     {
         pop.AddHousing(rooms, isElite);
         parentBuilding.justPlaced = false;
+    }
+
+    private void OnDestroy()
+    {
+        if(isElite)
+        {
+            pop.RemoveEliteHousing(rooms);
+        }
+        else
+        {
+            pop.RemovePeasantHousing(rooms);
+        }
     }
 }

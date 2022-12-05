@@ -15,7 +15,11 @@ public class Population : MonoBehaviour
     public int workingElites;
 
     [SerializeField] private int availablePeasantHousing;
+    [SerializeField] private int totalPeasantHousing;
     [SerializeField] private int availableEliteHousing;
+    [SerializeField] private int totalEliteHousing;
+
+    #region AddPopulation
 
     public void AddPeasants(int people)
     {
@@ -53,16 +57,22 @@ public class Population : MonoBehaviour
         totalElites = housedElites + homelessElites;
     }
 
+    #endregion
+
+    #region Housing
+
     public void AddHousing(int rooms, bool isElite)
     {
         if(isElite)
         {
             availableEliteHousing += rooms;
+            totalEliteHousing += rooms;
             CheckEliteAvailability();
         }
         else
         {
             availablePeasantHousing += rooms;
+            totalPeasantHousing += rooms;
             CheckPeasantAvailability();
         }
     }
@@ -104,6 +114,42 @@ public class Population : MonoBehaviour
             }
         }
     }
+
+    public void RemovePeasantHousing(int rooms)
+    {
+        if(housedPeasants > totalPeasantHousing - rooms)
+        {
+            totalPeasantHousing -= rooms;
+            int dif = housedPeasants - totalPeasantHousing;
+            homelessPeasants += dif;
+            housedPeasants -= dif;
+            availablePeasantHousing = totalPeasantHousing - housedPeasants;
+        }
+        else
+        {
+            totalPeasantHousing -= rooms;
+            availablePeasantHousing -= rooms;
+        }
+    }
+
+    public void RemoveEliteHousing(int rooms)
+    {
+        if (housedElites > totalEliteHousing - rooms)
+        {
+            totalEliteHousing -= rooms;
+            int dif = housedElites - totalEliteHousing;
+            homelessElites += dif;
+            housedElites -= dif;
+            availableEliteHousing = totalEliteHousing - housedElites;
+        }
+        else
+        {
+            totalEliteHousing -= rooms;
+            availableEliteHousing -= rooms;
+        }
+    }
+
+    #endregion
 
     #region KillRegion
 

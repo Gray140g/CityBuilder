@@ -25,35 +25,7 @@ public class Workers : MonoBehaviour
         crime = GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<Crime>();
     }
 
-    void Update()
-    {
-        if (thisClick.added)
-        {
-            Add();
-        }
-
-        if (thisClick.subtracted)
-        {
-            Subtract(1, false);
-        }
-
-        if(thisClick.max)
-        {
-            Maximize();
-        }
-
-        if(thisClick.min)
-        {
-            Minimize();
-        }
-
-        if(thisClick.typeForChange != type)
-        {
-            type = thisClick.typeForChange;
-        }
-    }
-
-    private void Add()
+    public void Add()
     {
         if (workers < maxWorkers)
         {
@@ -134,7 +106,7 @@ public class Workers : MonoBehaviour
         thisClick.subtracted = false;
     }
 
-    private void Maximize()
+    public void Maximize()
     {
         if(type == 2 || type == 3)
         {
@@ -210,7 +182,7 @@ public class Workers : MonoBehaviour
         thisClick.max = false;
     }
 
-    private void Minimize()
+    public void Minimize()
     {
         if(type == 0)
         {
@@ -237,5 +209,13 @@ public class Workers : MonoBehaviour
         workers = 0;
 
         thisClick.min = false;
+    }
+
+    public void TypeChange()
+    {
+        if (thisClick.typeForChange != type)
+        {
+            type = thisClick.typeForChange;
+        }
     }
 }
