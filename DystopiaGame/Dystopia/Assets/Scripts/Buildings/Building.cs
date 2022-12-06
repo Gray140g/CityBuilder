@@ -10,12 +10,15 @@ public class Building : MonoBehaviour
     public GameObject outline;
 
     public Vector3 offSet;
+    public Vector3 permanentOffSet;
 
     public bool beingPlaced = false;
     public bool canPlace = true;
     public bool justPlaced = false;
     public bool rotate = false;
     public bool outLineRotate = false;
+    public bool colliderRotate = false;
+    public bool hasRotatingCollider = false;
     public bool destroyed = false;
     public int cost;
     public int typeInt;

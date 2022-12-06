@@ -87261,6 +87261,11 @@ PrefabInstance:
       objectReference: {fileID: 1656434557}
     - target: {fileID: 9007489148445227214, guid: 9a357564cac04754a9b982e11e9b8080,
         type: 3}
+      propertyPath: offSet.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007489148445227214, guid: 9a357564cac04754a9b982e11e9b8080,
+        type: 3}
       propertyPath: buildMenu
       value: 
       objectReference: {fileID: 2079201047}

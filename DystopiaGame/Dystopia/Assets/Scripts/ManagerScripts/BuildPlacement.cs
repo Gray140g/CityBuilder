@@ -52,7 +52,7 @@ public class BuildPlacement : MonoBehaviour
         if(placingBuilding)
         {
             tempPos = map.WorldToCell(cam.ScreenToWorldPoint(cursor.GetComponent<RectTransform>().position)) + offSet;
-            buildingObject.transform.position = map.CellToLocalInterpolated(tempPos + buildingScript.offSet);
+            buildingObject.transform.position = map.CellToLocalInterpolated(tempPos + buildingScript.offSet + buildingScript.permanentOffSet);
 
             canPlace = buildingScript.canPlace;
 
@@ -82,6 +82,7 @@ public class BuildPlacement : MonoBehaviour
                 {
                     openTiles.SetActive(false);
                     placingBuilding = false;
+                    buildingObject.transform.position += buildingScript.permanentOffSet;
                     buildingScript.beingPlaced = false;
 
                     if (spriteRender != null)
@@ -143,6 +144,10 @@ public class BuildPlacement : MonoBehaviour
             {
                 buildingScript.rotate = true;
                 buildingScript.outLineRotate = true;
+                if(buildingScript.hasRotatingCollider)
+                {
+                    buildingScript.colliderRotate = true;
+                }
             }
         }
     }
