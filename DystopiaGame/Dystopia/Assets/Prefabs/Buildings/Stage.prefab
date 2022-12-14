@@ -245,11 +245,14 @@ MonoBehaviour:
   clickCollider: {fileID: 8837914106702393921}
   outline: {fileID: 721478017921504328}
   offSet: {x: 0, y: 0, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 0
   typeInt: 0
@@ -375,6 +378,7 @@ MonoBehaviour:
   outline: {fileID: 721478017921504328}
   buildingSprite: {fileID: 21300000, guid: 5118144c437c30c418045aea7f60b963, type: 3}
   buildingName: Stage
+  buildingDesc: Make speeches to improve the balance of power
   type: 3
   added: 0
   subtracted: 0

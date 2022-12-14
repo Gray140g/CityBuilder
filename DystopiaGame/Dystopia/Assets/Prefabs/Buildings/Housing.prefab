@@ -195,6 +195,7 @@ MonoBehaviour:
   outline: {fileID: 4513285577189986460}
   buildingSprite: {fileID: 21300000, guid: 6438237d97d08bc4a960766c37600e9b, type: 3}
   buildingName: Peasant Housing
+  buildingDesc: Housing for peasants
   type: 2
   added: 0
   subtracted: 0
@@ -371,11 +372,14 @@ MonoBehaviour:
   clickCollider: {fileID: 2378136490871344126}
   outline: {fileID: 4513285577189986460}
   offSet: {x: 0.5, y: 0.5, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 50
   typeInt: 1

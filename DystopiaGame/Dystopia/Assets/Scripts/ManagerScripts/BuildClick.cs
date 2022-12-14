@@ -8,6 +8,7 @@ public class BuildClick : MonoBehaviour
 
     [SerializeField] private Sprite buildingSprite;
     [SerializeField] private string buildingName;
+    [SerializeField] private string buildingDesc;
     public int type;
 
     public bool added;
@@ -43,7 +44,7 @@ public class BuildClick : MonoBehaviour
 
     public void Click()
     {
-        click.OnClick(buildingName, buildingSprite, type);
+        click.OnClick(buildingName, buildingDesc, buildingSprite, type);
     }
 
     public void Change(int newType)

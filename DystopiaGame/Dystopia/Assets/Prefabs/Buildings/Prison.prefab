@@ -156,6 +156,7 @@ MonoBehaviour:
   outline: {fileID: 5282622717505215248}
   buildingSprite: {fileID: 21300000, guid: 406219dce136edc4dabd8ce0bb19d45a, type: 3}
   buildingName: Prison
+  buildingDesc: Where dissenters are kept and reeducated
   type: 2
   added: 0
   subtracted: 0
@@ -494,7 +495,7 @@ MonoBehaviour:
   clickCollider: {fileID: 2485181411915166153}
   outline: {fileID: 5282622717505215248}
   offSet: {x: 0.5, y: 0.5, z: 0}
-  permanentOffSet: {x: 0, y: 0, z: 2}
+  permanentOffSet: {x: 0, y: 0, z: 3.5}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0

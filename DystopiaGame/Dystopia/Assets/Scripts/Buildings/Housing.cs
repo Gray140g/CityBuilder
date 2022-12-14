@@ -33,13 +33,16 @@ public class Housing : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(isElite)
+        if(!parentBuilding.beingPlaced)
         {
-            pop.RemoveEliteHousing(rooms);
-        }
-        else
-        {
-            pop.RemovePeasantHousing(rooms);
+            if (isElite)
+            {
+                pop.RemoveEliteHousing(rooms);
+            }
+            else
+            {
+                pop.RemovePeasantHousing(rooms);
+            }
         }
     }
 }

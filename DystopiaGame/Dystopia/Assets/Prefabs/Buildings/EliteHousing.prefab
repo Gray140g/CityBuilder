@@ -115,6 +115,7 @@ MonoBehaviour:
   outline: {fileID: 4401753890231238156}
   buildingSprite: {fileID: 21300000, guid: 5d4750cd2fecb5c46b5360a4ba14e189, type: 3}
   buildingName: Elite Housing
+  buildingDesc: Housing for the elites
   type: 2
   added: 0
   subtracted: 0
@@ -395,11 +396,14 @@ MonoBehaviour:
   clickCollider: {fileID: 3700363943650983543}
   outline: {fileID: 4401753890231238156}
   offSet: {x: 0.5, y: 0.5, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 100
   typeInt: 1

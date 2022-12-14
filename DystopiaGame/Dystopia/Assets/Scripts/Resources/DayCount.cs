@@ -21,8 +21,6 @@ public class DayCount : MonoBehaviour
     {
         food.AddFood();
         food.Eat();
-        pop.AddPeasants(Mathf.RoundToInt(food.food / 64));
-        pop.AddElites(Mathf.RoundToInt(food.food / 128));
         mat.AddMaterials();
         prop.AddPropaganda();
         crime.GetCrime();

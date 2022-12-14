@@ -4,6 +4,7 @@ using System.Collections;
 public class Materials : MonoBehaviour
 {
     [SerializeField] private Population pop;
+    [SerializeField] private LossText lossAnim;
 
     public int materials;
     public int dailyMaterials;
@@ -15,5 +16,6 @@ public class Materials : MonoBehaviour
         float gainFloat = (workers + 1) / (maxWorkers + 1) * dailyMaterials;
         int gain = Mathf.RoundToInt(gainFloat);
         materials += gain;
+        lossAnim.StartAnimation(gain, 3);
     }
 }

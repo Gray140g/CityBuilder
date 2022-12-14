@@ -288,6 +288,7 @@ MonoBehaviour:
   outline: {fileID: 6419945444082695459}
   buildingSprite: {fileID: 21300000, guid: 668f86e1d99f19648bb5ed0ad57bd6e6, type: 3}
   buildingName: Farm
+  buildingDesc: Our vital wheat is grown on these farms
   type: 0
   added: 0
   subtracted: 0
@@ -460,11 +461,14 @@ MonoBehaviour:
   clickCollider: {fileID: 6448143378919410233}
   outline: {fileID: 6419945444082695459}
   offSet: {x: 0.5, y: 0.5, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 25
   typeInt: 4

@@ -13,10 +13,16 @@ public class PeasantContent : MonoBehaviour
     [SerializeField] private float patriotism = 50;
 
     [SerializeField] private Slider balanceSlider;
+    [SerializeField] private Slider happinessSlider;
+    [SerializeField] private Slider fearSlider;
+    [SerializeField] private Slider patriotismSlider;
 
     private void Update()
     {
         DetermineBalance();
+        happinessSlider.value = happiness;
+        fearSlider.value = fear;
+        patriotismSlider.value = patriotism;
         balanceSlider.value = balance;
     }
 

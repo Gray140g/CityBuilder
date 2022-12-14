@@ -38,9 +38,12 @@ public class Mine : MonoBehaviour
 
     private void OnDestroy()
     {
-        mat.workers -= workStation.workers;
-        mat.maxWorkers -= workStation.maxWorkers;
-        pop.workingPeasants -= workStation.workers;
-        mat.dailyMaterials -= newMaterials;
+        if(!parentBuilding.beingPlaced)
+        {
+            mat.workers -= workStation.workers;
+            mat.maxWorkers -= workStation.maxWorkers;
+            pop.workingPeasants -= workStation.workers;
+            mat.dailyMaterials -= newMaterials;
+        }
     }
 }

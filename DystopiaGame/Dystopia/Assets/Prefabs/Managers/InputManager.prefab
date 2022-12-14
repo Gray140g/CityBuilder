@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4898578240812357807}
   - component: {fileID: 9007489148445227214}
   - component: {fileID: 7362573725824249472}
-  - component: {fileID: 4548394925675629088}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: InputManager
@@ -219,6 +218,7 @@ MonoBehaviour:
   tempPos: {x: 0, y: 0, z: 0}
   openTiles: {fileID: 0}
   map: {fileID: 0}
+  lossAnim: {fileID: 0}
   red: {r: 1, g: 0, b: 0, a: 1}
   green: {r: 0, g: 1, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -270,18 +270,3 @@ MonoBehaviour:
   - {fileID: 0}
   timeSlider: {fileID: 0}
   timeSliderText: {fileID: 0}
---- !u!114 &4548394925675629088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380847583751941923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c425d71fecded114eac802c7a7474207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildIsOpen: 0
-  editIsOpen: 0
-  commandIsOpen: 0

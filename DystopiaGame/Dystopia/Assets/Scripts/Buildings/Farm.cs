@@ -38,9 +38,12 @@ public class Farm : MonoBehaviour
 
     private void OnDestroy()
     {
-        food.workers -= workStation.workers;
-        food.maxWorkers -= workStation.maxWorkers;
-        pop.workingPeasants -= workStation.workers;
-        food.dailyFood -= newFood;
+        if(!parentBuilding.beingPlaced)
+        {
+            food.workers -= workStation.workers;
+            food.maxWorkers -= workStation.maxWorkers;
+            pop.workingPeasants -= workStation.workers;
+            food.dailyFood -= newFood;
+        }
     }
 }

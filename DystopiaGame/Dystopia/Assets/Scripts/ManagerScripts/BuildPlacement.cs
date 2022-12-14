@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -31,6 +32,7 @@ public class BuildPlacement : MonoBehaviour
     [SerializeField] private Tilemap map;
 
     private Materials mat;
+    [SerializeField] private LossText lossAnim;
 
     [SerializeField] private Color red;
     [SerializeField] private Color green;
@@ -39,6 +41,7 @@ public class BuildPlacement : MonoBehaviour
     private int currentCost;
     public bool placingBuilding = false;
     private bool canPlace;
+    private bool onCoolDown = false;
     private bool editing = false;
 
 
@@ -52,7 +55,7 @@ public class BuildPlacement : MonoBehaviour
         if(placingBuilding)
         {
             tempPos = map.WorldToCell(cam.ScreenToWorldPoint(cursor.GetComponent<RectTransform>().position)) + offSet;
-            buildingObject.transform.position = map.CellToLocalInterpolated(tempPos + buildingScript.offSet + buildingScript.permanentOffSet);
+            buildingObject.transform.position = map.CellToLocalInterpolated(tempPos + buildingScript.offSet);
 
             canPlace = buildingScript.canPlace;
 
@@ -78,34 +81,9 @@ public class BuildPlacement : MonoBehaviour
         {
             if (placingBuilding)
             {
-                if(canPlace)
+                if(canPlace && !onCoolDown)
                 {
-                    openTiles.SetActive(false);
-                    placingBuilding = false;
-                    buildingObject.transform.position += buildingScript.permanentOffSet;
-                    buildingScript.beingPlaced = false;
-
-                    if (spriteRender != null)
-                    {
-                        spriteRender.sortingOrder = 0;
-                        spriteRender.color = normalColor;
-                        spriteRender = null;
-                    }
-
-                    grouping.AddToList(buildingObject, buildingScript.typeInt);
-                    camMove.MoveToBuilding(buildingObject.transform.position);
-
-                    if (!editing)
-                    {
-                        buildTime.OnPlace();
-                        mat.materials -= currentCost;
-                        StartBuild(currentBuildingType);
-                    }
-                    else
-                    {
-                        buildingScript.EditPlace();
-                        editing = false;
-                    }
+                    StartCoroutine("CheckCanPlace");
                 }
             }
         }
@@ -148,6 +126,43 @@ public class BuildPlacement : MonoBehaviour
                 {
                     buildingScript.colliderRotate = true;
                 }
+            }
+        }
+    }
+
+    private IEnumerator CheckCanPlace()
+    {
+        yield return new WaitForSeconds(.05f);
+        if(canPlace)
+        {
+            openTiles.SetActive(false);
+            placingBuilding = false;
+            buildingObject.transform.position += buildingScript.permanentOffSet;
+            buildingScript.beingPlaced = false;
+
+            if (spriteRender != null)
+            {
+                spriteRender.sortingOrder = 0;
+                spriteRender.color = normalColor;
+                spriteRender = null;
+            }
+
+            grouping.AddToList(buildingObject, buildingScript.typeInt);
+            camMove.MoveToBuilding(buildingObject.transform.position);
+
+            if (!editing)
+            {
+                buildTime.OnPlace();
+                mat.materials -= currentCost;
+                lossAnim.StartAnimation(-currentCost, 3);
+                onCoolDown = true;
+                StartBuild(currentBuildingType);
+                StartCoroutine("CoolDown");
+            }
+            else
+            {
+                buildingScript.EditPlace();
+                editing = false;
             }
         }
     }
@@ -207,6 +222,12 @@ public class BuildPlacement : MonoBehaviour
             mat.materials += buildingScript.cost;
             grouping.RemoveFromList(buildingObject, buildingScript.typeInt);
         }
+    }
+
+    private IEnumerator CoolDown()
+    {
+        yield return new WaitForSecondsRealtime(.25f);
+        onCoolDown = false;
     }
 
     #endregion

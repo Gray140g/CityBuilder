@@ -35,8 +35,11 @@ public class PoliceStation : MonoBehaviour
 
     private void OnDestroy()
     {
-        crime.police -= workStation.workers;
-        crime.maxPolice -= workStation.maxWorkers;
-        pop.workingElites -= workStation.workers;
+        if(!parentBuilding.beingPlaced)
+        {
+            crime.police -= workStation.workers;
+            crime.maxPolice -= workStation.maxWorkers;
+            pop.workingElites -= workStation.workers;
+        }
     }
 }

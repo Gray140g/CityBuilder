@@ -353,11 +353,14 @@ MonoBehaviour:
   clickCollider: {fileID: 8923665849824689652}
   outline: {fileID: 2133776411462169930}
   offSet: {x: 0.5, y: 0.5, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 50
   typeInt: 100
@@ -578,6 +581,7 @@ MonoBehaviour:
   outline: {fileID: 2133776411462169930}
   buildingSprite: {fileID: 21300000, guid: 19f8b6849882e28479a9dc76e7d62723, type: 3}
   buildingName: School
+  buildingDesc: A place for children to be taught the glory of our nation
   type: 2
   added: 0
   subtracted: 0

@@ -74,6 +74,7 @@ MonoBehaviour:
   outline: {fileID: 3784035421699048071}
   buildingSprite: {fileID: 21300000, guid: 8954925c0b90f55449279dabeddc017f, type: 3}
   buildingName: Propaganda Factory
+  buildingDesc: A factory for making propaganda
   type: 0
   added: 0
   subtracted: 0
@@ -529,7 +530,7 @@ MonoBehaviour:
   clickCollider: {fileID: 2754226156562728790}
   outline: {fileID: 3784035421699048071}
   offSet: {x: 0.5, y: 0.5, z: 0}
-  permanentOffSet: {x: 0, y: 0, z: 2}
+  permanentOffSet: {x: 0, y: 0, z: 3.5}
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0

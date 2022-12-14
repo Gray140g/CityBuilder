@@ -32,7 +32,10 @@ public class Prison : MonoBehaviour
 
     private void OnDestroy()
     {
-        crime.prisonCells -= rooms;
-        crime.SubtractPrisoners();
+        if(!parentBuilding.beingPlaced)
+        {
+            crime.prisonCells -= rooms;
+            crime.SubtractPrisoners();
+        }
     }
 }

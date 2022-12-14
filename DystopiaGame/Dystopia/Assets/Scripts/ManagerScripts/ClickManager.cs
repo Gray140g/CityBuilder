@@ -19,8 +19,10 @@ public class ClickManager : MonoBehaviour
     public List<BuildClick> collisions = new List<BuildClick>();
 
     [SerializeField] private GameObject[] screens;
+    [SerializeField] private GameObject[] bottomBarObjects;
     [SerializeField] private Image[] buildingImages;
-    [SerializeField] private TextMeshProUGUI[] nameTexts;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TextMeshProUGUI[] descTexts;
     [SerializeField] private TextMeshProUGUI[] valTexts;
     [SerializeField] private Slider timeSlider;
     [SerializeField] private TextMeshProUGUI timeSliderText;
@@ -76,14 +78,19 @@ public class ClickManager : MonoBehaviour
         }
     }
 
-    public void OnClick(string name, Sprite image, int type)
+    public void OnClick(string name, string desc, Sprite image, int type)
     {
         if(!opener.buildIsOpen)
         {
             ClearScreens(type);
 
-            nameTexts[type].text = name;
+            nameText.text = name;
             buildingImages[type].sprite = image;
+            
+            if(descTexts[type] != null)
+            {
+                descTexts[type].text = desc;
+            }
 
             if (type != 2 && type != 3 && type != 5)
             {
@@ -116,6 +123,11 @@ public class ClickManager : MonoBehaviour
     {
         if(!opener.buildIsOpen)
         {
+            for (int i = 0; i < bottomBarObjects.Length; i++)
+            {
+                bottomBarObjects[i].SetActive(true);
+            }
+
             for (int i = 0; i < screens.Length; i++)
             {
                 if (i != type)
@@ -177,6 +189,14 @@ public class ClickManager : MonoBehaviour
         if (current.outline != null)
         {
             current.outline.SetActive(false);
+        }
+    }
+
+    public void MoveOrDestroy()
+    {
+        for (int i = 0; i < bottomBarObjects.Length; i++)
+        {
+            bottomBarObjects[i].SetActive(false);
         }
     }
 }
