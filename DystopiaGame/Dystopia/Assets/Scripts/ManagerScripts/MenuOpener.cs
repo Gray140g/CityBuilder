@@ -14,6 +14,7 @@ public class MenuOpener : MonoBehaviour
     public bool editIsOpen = false;
     public bool commandIsOpen = false;
     private bool balanceIsOpen = false;
+    public bool inInfo = false;
 
     public void CloseBuild()
     {
@@ -46,6 +47,18 @@ public class MenuOpener : MonoBehaviour
             }
             balanceBar.SetActive(true);
             balanceImage.sprite = buttonSprites[0];
+        }
+    }
+
+    public void EnterInfo(string action)
+    {
+        if(action == "enter")
+        {
+            inInfo = true;
+        }
+        else
+        {
+            inInfo = false;
         }
     }
 }

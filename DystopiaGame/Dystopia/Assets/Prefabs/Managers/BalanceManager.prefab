@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2208359008315455381}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,6 +54,9 @@ MonoBehaviour:
   fear: 0
   patriotism: 50
   balanceSlider: {fileID: 0}
+  happinessSlider: {fileID: 0}
+  fearSlider: {fileID: 0}
+  patriotismSlider: {fileID: 0}
 --- !u!114 &7399355770387130186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,3 +94,54 @@ MonoBehaviour:
   descDisplay: {fileID: 0}
   imageDisplay: {fileID: 0}
   unlockButton: {fileID: 0}
+--- !u!1 &3589453007906184216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2208359008315455381}
+  - component: {fileID: 6930250593909843571}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2208359008315455381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589453007906184216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8133802445334893125}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6930250593909843571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589453007906184216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c3bf6b9bab4d44bace72ab15800bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isQuestSlotActive: 000000
+  canvas: {fileID: 0}
+  questPrefab: {fileID: 7114537228854766033, guid: 98e2f486c4c64ab4590579d26e9c95c2,
+    type: 3}

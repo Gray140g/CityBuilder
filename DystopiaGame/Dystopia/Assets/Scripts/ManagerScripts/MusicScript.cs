@@ -17,8 +17,11 @@ public class MusicScript : MonoBehaviour
     {
         if(!source.isPlaying)
         {
-            int i = Random.Range(0, songs.Length - 1);
-            source.clip = songs[i];
+            if(songs.Length > 0)
+            {
+                int i = Random.Range(0, songs.Length - 1);
+                source.clip = songs[i];
+            }
             source.Play();
             StartCoroutine("WaitForNextSong");
         }

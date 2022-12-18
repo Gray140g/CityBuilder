@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class DayCount : MonoBehaviour
 {
+    [SerializeField] private Calendar cal;
+
     [SerializeField] private Population pop;
     [SerializeField] private Food food;
     [SerializeField] private Materials mat;
@@ -25,6 +27,7 @@ public class DayCount : MonoBehaviour
         prop.AddPropaganda();
         crime.GetCrime();
         content.DayChange();
+        cal.AddDay();
     }
 
     private IEnumerator DayChange()

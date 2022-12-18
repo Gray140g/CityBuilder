@@ -25,7 +25,7 @@ public class CamMove : MonoBehaviour
         {
             if(!needsToFollowBuilding)
             {
-                rb.velocity = moveVector.normalized * speed * Time.fixedDeltaTime;
+                rb.velocity = moveVector.normalized * speed * Time.unscaledDeltaTime;
             }
         }
         else
@@ -35,7 +35,7 @@ public class CamMove : MonoBehaviour
 
         if(needsToFollowBuilding && cam.transform.position != moveTowards)
         {
-            cam.transform.position = Vector3.MoveTowards(cam.transform.position, moveTowards, step * Time.fixedDeltaTime);
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, moveTowards, step * Time.unscaledDeltaTime);
         }
         else
         {

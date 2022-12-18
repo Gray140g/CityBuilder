@@ -10,6 +10,10 @@ public class Commands : MonoBehaviour
     [SerializeField] private GameObject bar;
     [SerializeField] private TMP_InputField text;
 
+    //Remove These Eventually
+    [SerializeField] private QuestDisplay tempDisplay;
+    [SerializeField] private QuestBar tempQuest;
+
     public void Use(InputAction.CallbackContext ctx)
     {
         if(ctx.performed)
@@ -62,6 +66,10 @@ public class Commands : MonoBehaviour
         else if(input.ToLower() == "/quit")
         {
             Application.Quit();
+        }
+        else if(input.ToLower() == "/addquest")
+        {
+            tempDisplay.ActivateQuest(tempQuest);
         }
 
         Deselect("hi");

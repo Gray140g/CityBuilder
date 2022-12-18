@@ -9,4 +9,19 @@ public class TimeManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void SlowDown()
+    {
+        Time.timeScale = .5f;
+    }
+
+    public void Play()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void SpeedUp()
+    {
+        Time.timeScale = 2;
+    }
 }

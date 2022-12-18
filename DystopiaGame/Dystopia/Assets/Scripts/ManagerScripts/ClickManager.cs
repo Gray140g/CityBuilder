@@ -80,7 +80,7 @@ public class ClickManager : MonoBehaviour
 
     public void OnClick(string name, string desc, Sprite image, int type)
     {
-        if(!opener.buildIsOpen)
+        if(!opener.buildIsOpen && !opener.inInfo)
         {
             ClearScreens(type);
 
