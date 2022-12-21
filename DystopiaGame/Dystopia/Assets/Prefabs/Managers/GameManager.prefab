@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testing: 0
+  speedUpButton: {fileID: 0}
+  slowDownButton: {fileID: 0}
+  red: {r: 1, g: 0.10980393, b: 0.10980393, a: 1}
 --- !u!114 &3262594533422296080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ac0b84888fd3448a700f26b65ad6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: {fileID: 0}
   dateDisplay: {fileID: 0}
+  clockDisplay: {fileID: 0}
   months:
   - Jan
   - Feb
@@ -83,6 +88,8 @@ GameObject:
   - component: {fileID: 8509951164063199691}
   - component: {fileID: 2705320879117458249}
   - component: {fileID: 2817296990816191539}
+  - component: {fileID: 3036839464746981341}
+  - component: {fileID: 2106573023580736206}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: BalanceManager
@@ -142,6 +149,42 @@ MonoBehaviour:
   opener: {fileID: 0}
   bar: {fileID: 0}
   text: {fileID: 0}
+  tempDisplay: {fileID: 0}
+  tempQuest: {fileID: 0}
+--- !u!114 &3036839464746981341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094743972458215457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea6bb12117b578499178dbfd0ac4681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingPrefabs:
+  - {fileID: 2809724833603216857, guid: 04523aca85c102e4b9256d26c2518915, type: 3}
+  placedBuildingIDs: 
+  xCoords: []
+  yCoords: []
+  zCoords: []
+--- !u!114 &2106573023580736206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094743972458215457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3317fa92dd24b049bd39e0891380f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placedBuildingIDs: 
+  xCoords: []
+  yCoords: []
+  zCoords: []
 --- !u!1 &6906658704273357503
 GameObject:
   m_ObjectHideFlags: 0

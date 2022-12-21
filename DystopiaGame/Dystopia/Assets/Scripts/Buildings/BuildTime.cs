@@ -7,6 +7,7 @@ public class BuildTime : MonoBehaviour
     [SerializeField] private BuildClick click;
     [SerializeField] private Rotation rotation;
     [SerializeField] private Rotation outlineRotation;
+    [SerializeField] private BuildingData data;
 
     [SerializeField] private SpriteRenderer render;
     public SpriteRenderer outline;
@@ -18,10 +19,11 @@ public class BuildTime : MonoBehaviour
     public int seconds;
     private int trueType;
     private int trueMax;
-    
+
     public void OnPlace()
     {
         StartCoroutine("TimeTick");
+        //data.OnPlace();
         render.sprite = inProgressSprite;
         if(outline != null)
         {

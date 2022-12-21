@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8710251550617908026}
   - component: {fileID: 8694995395696300810}
   - component: {fileID: 1854897049818861078}
+  - component: {fileID: 4297256857966277368}
   m_Layer: 0
   m_Name: ResourceManager
   m_TagString: ResourceManager
@@ -55,7 +56,6 @@ MonoBehaviour:
   prop: {fileID: 1854897049818861078}
   content: {fileID: 0}
   crime: {fileID: 0}
-  time: 10
 --- !u!114 &6089210204482081587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop: {fileID: 2925523023393658030}
+  stats: {fileID: 0}
+  lossAnim: {fileID: 0}
   food: 200
   dailyFood: 0
   maxWorkers: 0
@@ -155,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop: {fileID: 2925523023393658030}
+  lossAnim: {fileID: 0}
   materials: 200
   dailyMaterials: 0
   maxWorkers: 0
@@ -177,3 +180,27 @@ MonoBehaviour:
   dailyProp: 0
   maxWorkers: 0
   workers: 0
+--- !u!114 &4297256857966277368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171843b54adba247bc1b07953c4cb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deactivation:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  green: {r: 0.04209684, g: 0.8113208, b: 0.04209684, a: 1}
+  red: {r: 0.9607844, g: 0.10588236, b: 0.10588236, a: 1}

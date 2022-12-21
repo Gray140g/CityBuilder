@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBuilding: {fileID: 2233946627051925655}
   isElite: 1
-  rooms: 10
+  rooms: 30
 --- !u!114 &-8604350206984860570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +438,7 @@ MonoBehaviour:
   click: {fileID: 7762919780447396125}
   rotation: {fileID: 6988567797737941559}
   outlineRotation: {fileID: 7339635512665196124}
+  data: {fileID: 0}
   render: {fileID: -3761351807764782292}
   outline: {fileID: 6913354644805809095}
   inProgressSprite: {fileID: -2046082914358631274, guid: 65ed0e8b38d76fc4886032fa14d72af2,

@@ -6,6 +6,7 @@ public class PeasantContent : MonoBehaviour
     [SerializeField] private Crime crime;
     [SerializeField] private Population pop;
     [SerializeField] private Food food;
+    [SerializeField] private PopStats stats;
 
     public float balance;
     [SerializeField] private float happiness = 50;
@@ -94,10 +95,13 @@ public class PeasantContent : MonoBehaviour
 
     private void Famine()
     {
-        if(food.food == 0)
+        float change = stats.CalculateHungerChange();
+        ChangeHappiness(change / pop.totalElites);
+        if(change < 0)
         {
-            ChangeHappiness(.1f);
+            change *= -1;
         }
+        ChangePatriotism(change / pop.totalPeasants);
     }
 
     private void Crime()

@@ -486,7 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBuilding: {fileID: 5238592977957397074}
   workStation: {fileID: 6471741750312312459}
-  newFood: 50
+  newFood: 60
 --- !u!114 &6471741750312312459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +519,7 @@ MonoBehaviour:
   click: {fileID: 3950946013423496207}
   rotation: {fileID: 7742847958556074828}
   outlineRotation: {fileID: 2105882784628784332}
+  data: {fileID: 0}
   render: {fileID: 7049264284698932510}
   outline: {fileID: 8149830598774926874}
   inProgressSprite: {fileID: -4057977143843180069, guid: c9f3f6e0c2249f84581d8ca7e32878b9,

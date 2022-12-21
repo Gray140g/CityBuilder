@@ -147,11 +147,11 @@ public class BuildPlacement : MonoBehaviour
                 spriteRender = null;
             }
 
-            grouping.AddToList(buildingObject, buildingScript.typeInt);
             camMove.MoveToBuilding(buildingObject.transform.position);
 
             if (!editing)
             {
+                grouping.AddToList(buildingObject, buildingScript.typeInt);
                 buildTime.OnPlace();
                 mat.materials -= currentCost;
                 lossAnim.StartAnimation(-currentCost, 3);

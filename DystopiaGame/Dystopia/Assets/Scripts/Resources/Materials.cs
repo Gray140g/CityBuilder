@@ -13,7 +13,7 @@ public class Materials : MonoBehaviour
 
     public void AddMaterials()
     {
-        float gainFloat = (workers + 1) / (maxWorkers + 1) * dailyMaterials;
+        float gainFloat = (workers + 1) / (maxWorkers + 1) * dailyMaterials / 24 + .5f;
         int gain = Mathf.RoundToInt(gainFloat);
         materials += gain;
         lossAnim.StartAnimation(gain, 3);

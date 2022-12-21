@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 9016609468209549708}
   - component: {fileID: 193257691052800979}
   - component: {fileID: -8013541870904205833}
+  - component: {fileID: 1198884274718139570}
   m_Layer: 6
   m_Name: Housing
   m_TagString: Building
@@ -434,6 +435,7 @@ MonoBehaviour:
   click: {fileID: 8392547716715673964}
   rotation: {fileID: 193257691052800979}
   outlineRotation: {fileID: 4736921206413595705}
+  data: {fileID: 1198884274718139570}
   render: {fileID: 2809724833603216856}
   outline: {fileID: 3311310652598935895}
   inProgressSprite: {fileID: 5722719141091856455, guid: 7ad091fcd053c74439189d0380ba6a8d,
@@ -442,6 +444,22 @@ MonoBehaviour:
     type: 3}
   totalTime: 10
   seconds: 10
+--- !u!114 &1198884274718139570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809724833603216857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81bd572a4de460469596e648e1f88a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabID: 0
+  x: 0
+  y: 0
+  z: 0
 --- !u!1 &4513285577189986460
 GameObject:
   m_ObjectHideFlags: 0

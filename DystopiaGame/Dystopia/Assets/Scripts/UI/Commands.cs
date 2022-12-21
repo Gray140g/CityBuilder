@@ -71,6 +71,10 @@ public class Commands : MonoBehaviour
         {
             tempDisplay.ActivateQuest(tempQuest);
         }
+        else if(input.ToLower() == "/speedup")
+        {
+            Time.timeScale = 100;
+        }
 
         Deselect("hi");
         bar.SetActive(false);

@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 3447370329661153039}
   - component: {fileID: 1259727054693977272}
   - component: {fileID: 2943820237325240095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: School
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -414,6 +414,7 @@ MonoBehaviour:
   click: {fileID: 7210123161596373037}
   rotation: {fileID: 3447370329661153039}
   outlineRotation: {fileID: 9049222246357860158}
+  data: {fileID: 0}
   render: {fileID: 2393863620328866411}
   outline: {fileID: 5380137439471849284}
   inProgressSprite: {fileID: -714655812665524580, guid: 265bb628f6d565f4b9482871a756d2ec,

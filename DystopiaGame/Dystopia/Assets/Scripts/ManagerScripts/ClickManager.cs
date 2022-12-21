@@ -186,9 +186,12 @@ public class ClickManager : MonoBehaviour
 
     public void Exit()
     {
-        if (current.outline != null)
+        if(current != null)
         {
-            current.outline.SetActive(false);
+            if (current.outline != null)
+            {
+                current.outline.SetActive(false);
+            }
         }
     }
 

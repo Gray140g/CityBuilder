@@ -159,8 +159,11 @@ MonoBehaviour:
   rb: {fileID: 0}
   camObject: {fileID: 0}
   speed: 400
-  step: 75
-  min: 4
+  zoomSpeed: 0.1
+  zoomTowards: 0
+  zoomPerFrame: 0.25
+  step: 10
+  min: 2
   max: 20
 --- !u!114 &4898578240812357807
 MonoBehaviour:
@@ -196,7 +199,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   camMove: {fileID: 711838397774081306}
   cursor: {fileID: 0}
-  click: {fileID: 0}
+  click: {fileID: 7362573725824249472}
   grouping: {fileID: 0}
   opener: {fileID: 0}
   buildMenu: {fileID: 0}
@@ -251,6 +254,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  bottomBarObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buildingImages:
   - {fileID: 0}
   - {fileID: 0}
@@ -258,7 +265,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  nameTexts:
+  nameText: {fileID: 0}
+  descTexts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

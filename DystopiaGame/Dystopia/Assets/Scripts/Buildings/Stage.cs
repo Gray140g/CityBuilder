@@ -4,7 +4,6 @@ using UnityEngine;
 public class Stage : MonoBehaviour
 {
     private PeasantContent content;
-    private DayCount day;
 
     public bool canUse = true;
     [SerializeField] private int value;
@@ -12,7 +11,6 @@ public class Stage : MonoBehaviour
     private void Start()
     {
         content =  GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<PeasantContent>();
-        day = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<DayCount>();
     }
 
     public void Use(int type)
@@ -51,7 +49,7 @@ public class Stage : MonoBehaviour
     private IEnumerator UseLock()
     {
         canUse = false;
-        yield return new WaitForSeconds(day.time * 7);
+        yield return new WaitForSeconds(5040);
         canUse = true;
     }
 }

@@ -189,8 +189,8 @@ MonoBehaviour:
   parentBuilding: {fileID: 7786318847770028228}
   workStation: {fileID: 6387706520310084050}
   click: {fileID: 5233992477324301921}
-  newMaterials: 100
-  newFood: 200
+  newMaterials: 120
+  newFood: 240
 --- !u!114 &6387706520310084050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   click: {fileID: 5233992477324301921}
   rotation: {fileID: 8386648570363045661}
   outlineRotation: {fileID: 6314453974977971799}
+  data: {fileID: 0}
   render: {fileID: 3427426531347149739}
   outline: {fileID: 4988650826467080090}
   inProgressSprite: {fileID: -4102168524580681326, guid: 7498278182d2cd940ab89615d7855a71,

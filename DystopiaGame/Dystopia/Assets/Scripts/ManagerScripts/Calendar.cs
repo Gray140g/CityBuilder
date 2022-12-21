@@ -1,9 +1,13 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
 public class Calendar : MonoBehaviour
 {
+    [SerializeField] private DayCount count;
+
     [SerializeField] private TextMeshProUGUI dateDisplay;
+    [SerializeField] private TextMeshProUGUI clockDisplay;
 
     [SerializeField] private string[] months;
     [SerializeField] private int[] daysInMonth;
@@ -12,8 +16,18 @@ public class Calendar : MonoBehaviour
     private int day = 7;
     private int year = 1917;
 
+    private int hour = 6;
+    private int min = 0;
+
+    private void Start()
+    {
+        StartCoroutine("AddMinute");
+    }
+
     public void AddDay()
     {
+        count.UpdateChangesDay();
+
         day += 1;
         if(day > daysInMonth[currentIndex])
         {
@@ -31,5 +45,53 @@ public class Calendar : MonoBehaviour
         }
 
         dateDisplay.text = months[currentIndex] + " " + day + ", " + year;
+
+        DisplayClock();
+        StartCoroutine("AddMinute");
+    }
+
+    private void DisplayClock()
+    {
+        if(min < 10)
+        {
+            clockDisplay.text = hour + ":0" + min; 
+        }
+        else
+        {
+            clockDisplay.text = hour + ":" + min;
+        }
+    }
+
+    private IEnumerator AddMinute()
+    {
+        yield return new WaitForSeconds(.5f);
+        if(min < 59)
+        {
+            min += 1;
+            DisplayClock();
+            StartCoroutine("AddMinute");
+        }
+        else
+        {
+            min = 0;
+            
+            if(hour < 24)
+            {
+                hour += 1;
+                DisplayClock();
+                count.UpdateChangesHour();
+                StartCoroutine("AddMinute");
+            }
+            else
+            {
+                hour = 1;
+                AddDay();
+            }
+        }
+    }
+
+    public IEnumerator WeekCount()
+    {
+        yield return new WaitForSeconds(5040);
     }
 }

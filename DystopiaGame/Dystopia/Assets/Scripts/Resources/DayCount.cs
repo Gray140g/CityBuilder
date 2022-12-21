@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class DayCount : MonoBehaviour
 {
-    [SerializeField] private Calendar cal;
-
     [SerializeField] private Population pop;
     [SerializeField] private Food food;
     [SerializeField] private Materials mat;
@@ -12,33 +10,18 @@ public class DayCount : MonoBehaviour
     [SerializeField] private PeasantContent content;
     [SerializeField] private Crime crime;
 
-    public float time;
-
-    private void Start()
+    public void UpdateChangesDay()
     {
-        StartCoroutine(DayChange());
-    }
-
-    private void UpdateChanges()
-    {
-        food.AddFood();
+        UpdateChangesHour();
         food.Eat();
-        mat.AddMaterials();
         prop.AddPropaganda();
         crime.GetCrime();
         content.DayChange();
-        cal.AddDay();
     }
 
-    private IEnumerator DayChange()
+    public void UpdateChangesHour()
     {
-        yield return new WaitForSeconds(time);
-        UpdateChanges();
-        StartCoroutine(DayChange());
-    }
-
-    public IEnumerator WeekCount()
-    {
-        yield return new WaitForSeconds(time * 7);
+        food.AddFood();
+        mat.AddMaterials();
     }
 }
