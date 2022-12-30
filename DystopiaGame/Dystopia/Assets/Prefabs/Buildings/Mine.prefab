@@ -164,11 +164,15 @@ MonoBehaviour:
   clickCollider: {fileID: 0}
   outline: {fileID: 0}
   offSet: {x: 0.5, y: 0.5, z: 0}
+  permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: Mine
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
   rotate: 0
   outLineRotate: 0
+  colliderRotate: 0
+  hasRotatingCollider: 0
   destroyed: 0
   cost: 25
   typeInt: 3
@@ -186,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBuilding: {fileID: -8796791428823199604}
   workStation: {fileID: 3047455984523197920}
-  newMaterials: 25
+  newMaterials: 2
 --- !u!114 &3047455984523197920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +223,7 @@ MonoBehaviour:
   click: {fileID: 0}
   rotation: {fileID: 0}
   outlineRotation: {fileID: 0}
+  data: {fileID: 0}
   render: {fileID: 0}
   outline: {fileID: 0}
   inProgressSprite: {fileID: 0}

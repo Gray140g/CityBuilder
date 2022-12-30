@@ -378,7 +378,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1889707699
   m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -4057977143843180069, guid: c9f3f6e0c2249f84581d8ca7e32878b9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -462,6 +462,7 @@ MonoBehaviour:
   outline: {fileID: 6419945444082695459}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: Farm
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
@@ -486,7 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBuilding: {fileID: 5238592977957397074}
   workStation: {fileID: 6471741750312312459}
-  newFood: 60
+  newFood: 5
 --- !u!114 &6471741750312312459
 MonoBehaviour:
   m_ObjectHideFlags: 0

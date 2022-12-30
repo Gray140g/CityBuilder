@@ -30,7 +30,7 @@ public class Mine : MonoBehaviour
 
     public void OnPlace()
     {
-        mat.dailyMaterials += newMaterials;
+        mat.hourlyMaterials += newMaterials;
         mat.maxWorkers += workStation.maxWorkers;
         workStation.thisClick.maxVal = workStation.maxWorkers;
         parentBuilding.justPlaced = false;
@@ -43,7 +43,7 @@ public class Mine : MonoBehaviour
             mat.workers -= workStation.workers;
             mat.maxWorkers -= workStation.maxWorkers;
             pop.workingPeasants -= workStation.workers;
-            mat.dailyMaterials -= newMaterials;
+            mat.hourlyMaterials -= newMaterials;
         }
     }
 }

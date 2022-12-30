@@ -60,7 +60,7 @@ public class Commands : MonoBehaviour
         }
         else if(input.ToLower() == "/reset")
         {
-            TimeManager time = GameObject.FindGameObjectWithTag("GameManager").GetComponent<TimeManager>();
+            TimeManager time = GameObject.FindGameObjectWithTag("GameManager").GetComponentInChildren<TimeManager>();
             time.Reload();
         }
         else if(input.ToLower() == "/quit")

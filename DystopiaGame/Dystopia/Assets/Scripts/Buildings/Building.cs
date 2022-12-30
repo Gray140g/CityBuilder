@@ -12,6 +12,7 @@ public class Building : MonoBehaviour
     public Vector3 offSet;
     public Vector3 permanentOffSet;
 
+    public string buildingName;
     public bool beingPlaced = false;
     public bool canPlace = true;
     public bool justPlaced = false;

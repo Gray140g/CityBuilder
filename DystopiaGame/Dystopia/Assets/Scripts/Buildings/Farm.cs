@@ -30,7 +30,7 @@ public class Farm : MonoBehaviour
 
     public void OnPlace()
     {
-        food.dailyFood += newFood;
+        food.hourlyFood += newFood;
         food.maxWorkers += workStation.maxWorkers;
         workStation.thisClick.maxVal = workStation.maxWorkers;
         parentBuilding.justPlaced = false;
@@ -43,7 +43,7 @@ public class Farm : MonoBehaviour
             food.workers -= workStation.workers;
             food.maxWorkers -= workStation.maxWorkers;
             pop.workingPeasants -= workStation.workers;
-            food.dailyFood -= newFood;
+            food.hourlyFood -= newFood;
         }
     }
 }

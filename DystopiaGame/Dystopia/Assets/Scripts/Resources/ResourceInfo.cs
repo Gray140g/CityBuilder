@@ -43,14 +43,14 @@ public class ResourceInfo : MonoBehaviour
         {
             resourceName.text = "Food";
             icon.sprite = foodSprite;
-            desc.text = "Total Food: " + food.food + "\nDaily Gain: " + food.dailyFood + "\nConsumption: " + food.eat +
+            desc.text = "Total Food: " + food.food + "\nHourly Gain: " + food.hourlyFood + "\nConsumption: " + food.eat +
                 "\n-----------------------------------\nWorkers: " + food.workers + "\nMax Workers: " + food.maxWorkers;
         }
         else
         {
             resourceName.text = "Money";
             icon.sprite = matSprite;
-            desc.text = "Total Money: " + mat.materials + "\nDaily Gain: " + mat.dailyMaterials +
+            desc.text = "Total Money: " + mat.materials + "\nHourly Gain: " + mat.hourlyMaterials +
                 "\n-----------------------------------\nWorkers: " + mat.workers + "\nMax Workers: " + mat.maxWorkers;
         }
     }

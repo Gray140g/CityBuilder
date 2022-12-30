@@ -164,6 +164,7 @@ MonoBehaviour:
   outline: {fileID: 7651373490095078670}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 3.5}
+  buildingName: Factory
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
@@ -189,8 +190,8 @@ MonoBehaviour:
   parentBuilding: {fileID: 7786318847770028228}
   workStation: {fileID: 6387706520310084050}
   click: {fileID: 5233992477324301921}
-  newMaterials: 120
-  newFood: 240
+  newMaterials: 10
+  newFood: 20
 --- !u!114 &6387706520310084050
 MonoBehaviour:
   m_ObjectHideFlags: 0

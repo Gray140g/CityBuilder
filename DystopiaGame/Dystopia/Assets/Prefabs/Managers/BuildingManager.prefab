@@ -62,14 +62,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4728b942202b599409ba08c773e44dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  techTreeButtons: []
-  buildMenuButtons: []
-  parentIndex: 
-  isUnlocked: 
-  costs: 
-  icons: []
-  names: []
-  descriptions: []
+  techTreeButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildMenuButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  parentIndex: 6400000000000000640000006400000003000000
+  isUnlocked: 0101010101
+  costs: 3200000064000000190000003200000032000000
+  icons:
+  - {fileID: 21300000, guid: 9f0f95fbf9d84b9478bc85f01304a849, type: 3}
+  - {fileID: 21300000, guid: 8954925c0b90f55449279dabeddc017f, type: 3}
+  - {fileID: 21300000, guid: 19f8b6849882e28479a9dc76e7d62723, type: 3}
+  - {fileID: 21300000, guid: 8e2465f8c0215814096f4d34a90949cb, type: 3}
+  - {fileID: 21300000, guid: 406219dce136edc4dabd8ce0bb19d45a, type: 3}
+  names:
+  - Factory
+  - Propaganda Factory
+  - School
+  - Police Station
+  - Prison
+  descriptions:
+  - Factory
+  - Propaganda
+  - School
+  - Police
+  - Prison
   icon: {fileID: 0}
   buildName: {fileID: 0}
   desc: {fileID: 0}

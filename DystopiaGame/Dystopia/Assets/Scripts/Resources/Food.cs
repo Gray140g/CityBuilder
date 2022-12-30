@@ -4,10 +4,10 @@ public class Food : MonoBehaviour
 {
     [SerializeField] private Population pop;
     [SerializeField] private PopStats stats;
-    [SerializeField] LossText lossAnim;
+    [SerializeField] private LossText lossAnim;
 
     public int food;
-    public int dailyFood;
+    public int hourlyFood;
     public float maxWorkers;
     public float workers;
     public int eat;
@@ -15,7 +15,7 @@ public class Food : MonoBehaviour
 
     public void AddFood()
     {
-        float gainFloat = ((workers + 1) / (maxWorkers + 1) * dailyFood) / 24;
+        float gainFloat = (workers + 1) / (maxWorkers + 1) * hourlyFood;
         gain = Mathf.RoundToInt(gainFloat);
         food += gain;
     }

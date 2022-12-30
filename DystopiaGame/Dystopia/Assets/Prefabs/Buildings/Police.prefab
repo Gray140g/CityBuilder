@@ -293,6 +293,7 @@ MonoBehaviour:
   outline: {fileID: 6675060086020623331}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: Police Station
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
@@ -349,6 +350,7 @@ MonoBehaviour:
   click: {fileID: 514759863190415335}
   rotation: {fileID: 3522634326659615749}
   outlineRotation: {fileID: 8666736128220698401}
+  data: {fileID: 0}
   render: {fileID: 6170704626540542803}
   outline: {fileID: 6164235457600086268}
   inProgressSprite: {fileID: -7275553061605418226, guid: 336d793f584bd3c499f19db4bd3dcd39,

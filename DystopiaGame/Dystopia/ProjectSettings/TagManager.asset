@@ -11,6 +11,7 @@ TagManager:
   - Clicker
   - GameManager
   - BuildingManager
+  - QuestManager
   layers:
   - Default
   - TransparentFX

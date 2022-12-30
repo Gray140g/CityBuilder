@@ -18,6 +18,7 @@ public class BuildPlacement : MonoBehaviour
 
     [SerializeField] private ClickManager click;
     [SerializeField] private BuildGroups grouping;
+    [SerializeField] private QuestManager quests;
     [SerializeField] private MenuOpener opener;
 
     [SerializeField] private GameObject buildMenu;
@@ -157,6 +158,7 @@ public class BuildPlacement : MonoBehaviour
                 lossAnim.StartAnimation(-currentCost, 3);
                 onCoolDown = true;
                 StartBuild(currentBuildingType);
+                quests.TryToComplete();
                 StartCoroutine("CoolDown");
             }
             else

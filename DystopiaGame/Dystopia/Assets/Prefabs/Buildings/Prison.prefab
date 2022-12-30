@@ -496,6 +496,7 @@ MonoBehaviour:
   outline: {fileID: 5282622717505215248}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 3.5}
+  buildingName: Prison
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
@@ -536,6 +537,7 @@ MonoBehaviour:
   click: {fileID: 4472324069318434116}
   rotation: {fileID: 8760460671392826417}
   outlineRotation: {fileID: 7709825004916700731}
+  data: {fileID: 0}
   render: {fileID: 6422881989349537934}
   outline: {fileID: 3347433801741099403}
   inProgressSprite: {fileID: -7108113552890334237, guid: 76e994f037d271546baa01e281f4bb53,

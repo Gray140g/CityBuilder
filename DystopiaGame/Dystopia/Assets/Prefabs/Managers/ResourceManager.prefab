@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 8694995395696300810}
   - component: {fileID: 1854897049818861078}
   - component: {fileID: 4297256857966277368}
+  - component: {fileID: 4834678690202966862}
+  - component: {fileID: 8600492856923775653}
+  - component: {fileID: 8541483483507918408}
+  - component: {fileID: 7968222423742737671}
   m_Layer: 0
   m_Name: ResourceManager
   m_TagString: ResourceManager
@@ -50,9 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b27520e3602a0d4186dcdc5601d3f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workTime: {fileID: 8600492856923775653}
   pop: {fileID: 2925523023393658030}
   food: {fileID: -8710251550617908026}
   mat: {fileID: 8694995395696300810}
+  ign: {fileID: 8541483483507918408}
+  inf: {fileID: 7968222423742737671}
   prop: {fileID: 1854897049818861078}
   content: {fileID: 0}
   crime: {fileID: 0}
@@ -71,11 +78,14 @@ MonoBehaviour:
   pop: {fileID: 2925523023393658030}
   food: {fileID: -8710251550617908026}
   mat: {fileID: 8694995395696300810}
+  ign: {fileID: 8541483483507918408}
+  inf: {fileID: 7968222423742737671}
   eliteText: {fileID: 0}
   peasantText: {fileID: 0}
   foodText: {fileID: 0}
   materialsText: {fileID: 0}
   ignoranceText: {fileID: 0}
+  influenceText: {fileID: 0}
 --- !u!114 &3422659334457777863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,16 +122,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grouping: {fileID: 0}
-  totalPeasants: 10
-  housedPeasants: 0
+  totalPeasants: 50
+  housedPeasants: 40
   homelessPeasants: 10
   workingPeasants: 0
-  totalElites: 10
+  totalElites: 25
   housedElites: 0
-  homelessElites: 10
+  homelessElites: 25
   workingElites: 0
   availablePeasantHousing: 0
-  totalPeasantHousing: 0
+  totalPeasantHousing: 40
   availableEliteHousing: 0
   totalEliteHousing: 0
 --- !u!114 &-8710251550617908026
@@ -140,7 +150,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   lossAnim: {fileID: 0}
   food: 200
-  dailyFood: 0
+  hourlyFood: 0
   maxWorkers: 0
   workers: 0
   eat: 0
@@ -159,7 +169,7 @@ MonoBehaviour:
   pop: {fileID: 2925523023393658030}
   lossAnim: {fileID: 0}
   materials: 200
-  dailyMaterials: 0
+  hourlyMaterials: 0
   maxWorkers: 0
   workers: 0
 --- !u!114 &1854897049818861078
@@ -204,3 +214,72 @@ MonoBehaviour:
   - {fileID: 0}
   green: {r: 0.04209684, g: 0.8113208, b: 0.04209684, a: 1}
   red: {r: 0.9607844, g: 0.10588236, b: 0.10588236, a: 1}
+--- !u!114 &4834678690202966862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd84d21b96a8a047a6783df004a373f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+--- !u!114 &8600492856923775653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d5891428e4e9148a02ccf01316d4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cal: {fileID: 0}
+  content: {fileID: 0}
+  workHoursStart: 6
+  workHoursEnd: 20
+  tempWorkEnd: 0
+  workHours: 1
+  workButton: {fileID: 0}
+  homeButton: {fileID: 0}
+--- !u!114 &8541483483507918408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9182ab917b1f4f843ce136d70a86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  tree: {fileID: 0}
+  ignorance: 25
+  hourlyIgnorance: 1
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &7968222423742737671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347aa698badd2b4408e1d29cbc753c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  influence: 25
+  hourlyInfluence: 0
+  maxWorkers: 0
+  workers: 0

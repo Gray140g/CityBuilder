@@ -6,27 +6,39 @@ public class ResourceDisplay : MonoBehaviour
     [SerializeField] private Population pop;
     [SerializeField] private Food food;
     [SerializeField] private Materials mat;
+    [SerializeField] private Ignorance ign;
+    [SerializeField] private Influence inf;
 
     [SerializeField] private TextMeshProUGUI eliteText;
     [SerializeField] private TextMeshProUGUI peasantText;
     [SerializeField] private TextMeshProUGUI foodText;
     [SerializeField] private TextMeshProUGUI materialsText;
     [SerializeField] private TextMeshProUGUI ignoranceText;
+    [SerializeField] private TextMeshProUGUI influenceText;
 
     private void Update()
     {
-        if(pop.totalElites < 1000)
+        PopDisplay();
+        FoodDisplay();
+        MatDisplay();
+        IgnDisplay();
+        //InfDisplay();
+    }
+
+    private void PopDisplay()
+    {
+        if (pop.totalElites < 1000)
         {
             eliteText.text = pop.totalElites.ToString();
         }
-        else if(pop.totalElites >= 1000 && pop.totalElites < 1000000)
+        else if (pop.totalElites >= 1000 && pop.totalElites < 1000000)
         {
-            float eliteDisplay = (float) (pop.totalElites - 50) / 1000;
+            float eliteDisplay = (float)(pop.totalElites - 50) / 1000;
             eliteText.text = eliteDisplay.ToString("f1") + "k";
         }
         else
         {
-            float eliteDisplay = (float) (pop.totalElites - 50000) / 1000000;
+            float eliteDisplay = (float)(pop.totalElites - 50000) / 1000000;
             eliteText.text = eliteDisplay.ToString("f1") + "m";
         }
 
@@ -44,7 +56,10 @@ public class ResourceDisplay : MonoBehaviour
             float peasantDisplay = (float)(pop.totalPeasants - 50000) / 1000000;
             peasantText.text = peasantDisplay.ToString("f1") + "m";
         }
+    }
 
+    private void FoodDisplay()
+    {
         if (food.food < 1000)
         {
             foodText.text = food.food.ToString();
@@ -59,23 +74,59 @@ public class ResourceDisplay : MonoBehaviour
             float foodDisplay = (float)(food.food - 50000) / 1000000;
             foodText.text = foodDisplay.ToString("f1") + "m";
         }
+    }
 
+    private void MatDisplay()
+    {
         if (mat.materials < 1000)
         {
             materialsText.text = mat.materials.ToString();
-            ignoranceText.text = mat.materials.ToString();
         }
         else if (mat.materials >= 1000 && mat.materials < 1000000)
         {
             float matDisplay = (float)(mat.materials - 50) / 1000;
             materialsText.text = matDisplay.ToString("f1") + "k";
-            ignoranceText.text = matDisplay.ToString("f1") + "k";
         }
         else
         {
             float matDisplay = (float)(mat.materials - 50000) / 1000000;
             materialsText.text = matDisplay.ToString("f1") + "m";
-            ignoranceText.text = matDisplay.ToString("f1") + "m";
+        }
+    }
+
+    private void IgnDisplay()
+    {
+        if (ign.ignorance < 1000)
+        {
+            ignoranceText.text = ign.ignorance.ToString();
+        }
+        else if (ign.ignorance >= 1000 && ign.ignorance < 1000000)
+        {
+            float ignDisplay = (float)(ign.ignorance - 50) / 1000;
+            ignoranceText.text = ignDisplay.ToString("f1") + "k";
+        }
+        else
+        {
+            float ignDisplay = (float)(ign.ignorance - 50000) / 1000000;
+            ignoranceText.text = ignDisplay.ToString("f1") + "m";
+        }
+    }
+
+    private void InfDisplay()
+    {
+        if (inf.influence < 1000)
+        {
+            influenceText.text = inf.influence.ToString();
+        }
+        else if (inf.influence >= 1000 && inf.influence < 1000000)
+        {
+            float infDisplay = (float)(inf.influence - 50) / 1000;
+            influenceText.text = infDisplay.ToString("f1") + "k";
+        }
+        else
+        {
+            float infDisplay = (float)(inf.influence - 50000) / 1000000;
+            influenceText.text = infDisplay.ToString("f1") + "m";
         }
     }
 }

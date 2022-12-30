@@ -199,8 +199,9 @@ GameObject:
   - component: {fileID: 3256038915677182019}
   - component: {fileID: 2027196488260716693}
   - component: {fileID: 9090217580240494108}
-  - component: {fileID: 3447370329661153039}
   - component: {fileID: 1259727054693977272}
+  - component: {fileID: 812637146784415471}
+  - component: {fileID: 3447370329661153039}
   - component: {fileID: 2943820237325240095}
   m_Layer: 6
   m_Name: School
@@ -354,6 +355,7 @@ MonoBehaviour:
   outline: {fileID: 2133776411462169930}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: School
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0
@@ -363,7 +365,38 @@ MonoBehaviour:
   hasRotatingCollider: 0
   destroyed: 0
   cost: 50
-  typeInt: 100
+  typeInt: 3
+--- !u!114 &1259727054693977272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295753081863210385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0a5d59b4692464f8c870468e794f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuilding: {fileID: 9090217580240494108}
+  workStation: {fileID: 812637146784415471}
+  newIgnorance: 2
+--- !u!114 &812637146784415471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295753081863210385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14289822530dd104c9a398ef53e816e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisClick: {fileID: 7210123161596373037}
+  workers: 0
+  maxWorkers: 15
+  type: 4
 --- !u!114 &3447370329661153039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,20 +417,6 @@ MonoBehaviour:
   - {fileID: 1290917122245694326, guid: 265bb628f6d565f4b9482871a756d2ec, type: 3}
   - {fileID: 4356545297300271804, guid: 265bb628f6d565f4b9482871a756d2ec, type: 3}
   isOutline: 0
---- !u!114 &1259727054693977272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295753081863210385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0a5d59b4692464f8c870468e794f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBuilding: {fileID: 9090217580240494108}
-  patriotism: 1
 --- !u!114 &2943820237325240095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,12 +597,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c20a6a092f6b4fa9e457f7ade0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workers: {fileID: 0}
+  workers: {fileID: 812637146784415471}
   outline: {fileID: 2133776411462169930}
   buildingSprite: {fileID: 21300000, guid: 19f8b6849882e28479a9dc76e7d62723, type: 3}
   buildingName: School
   buildingDesc: A place for children to be taught the glory of our nation
-  type: 2
+  type: 0
   added: 0
   subtracted: 0
   max: 0
@@ -591,4 +610,4 @@ MonoBehaviour:
   typeChange: 0
   typeForChange: 0
   val: 0
-  maxVal: 0
+  maxVal: 15

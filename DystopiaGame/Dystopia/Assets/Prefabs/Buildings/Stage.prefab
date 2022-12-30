@@ -247,6 +247,7 @@ MonoBehaviour:
   outline: {fileID: 721478017921504328}
   offSet: {x: 0, y: 0, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: Stage
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0

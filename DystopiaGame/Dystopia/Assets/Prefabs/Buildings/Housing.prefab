@@ -374,6 +374,7 @@ MonoBehaviour:
   outline: {fileID: 4513285577189986460}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
+  buildingName: Peasant House
   beingPlaced: 0
   canPlace: 1
   justPlaced: 0

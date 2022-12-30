@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class School : MonoBehaviour
 {
+    private Population pop;
+    private Ignorance ign;
     [SerializeField] private Building parentBuilding;
-    private PeasantContent content;
-    [SerializeField] private int patriotism;
+    [SerializeField] private Workers workStation;
+
+    [SerializeField] private int newIgnorance;
 
     private void Start()
     {
-        content = GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<PeasantContent>();
+        ign = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Ignorance>();
+        pop = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Population>();
     }
 
     private void Update()
@@ -17,11 +21,29 @@ public class School : MonoBehaviour
         {
             OnPlace();
         }
+
+        if (parentBuilding.destroyed)
+        {
+            OnDestroy();
+        }
     }
 
     public void OnPlace()
     {
-        content.ChangePatriotism(patriotism);
+        ign.hourlyIgnorance += newIgnorance;
+        ign.maxWorkers += workStation.maxWorkers;
+        workStation.thisClick.maxVal = workStation.maxWorkers;
         parentBuilding.justPlaced = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!parentBuilding.beingPlaced)
+        {
+            ign.workers -= workStation.workers;
+            ign.maxWorkers -= workStation.maxWorkers;
+            pop.workingPeasants -= workStation.workers;
+            ign.hourlyIgnorance -= newIgnorance;
+        }
     }
 }

@@ -7,22 +7,45 @@ public class Workers : MonoBehaviour
     private Food food;
     private Propaganda prop;
     private Crime crime;
+    private Ignorance ign;
+    private Influence inf;
 
     public BuildClick thisClick;
 
     public int workers;
     public int maxWorkers;
 
-    //0 = money, 1 = food, 2 = propaganda, 3 = police
+    //0 = money, 1 = food, 2 = propaganda, 3 = police, 4 = ignorance, 5 = influence
     public int type;
 
     private void Start()
     {
         pop = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Population>();
-        mat = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Materials>();
-        food = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Food>();
-        prop = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Propaganda>();
-        crime = GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<Crime>();
+
+        if (type == 0)
+        {
+            mat = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Materials>();
+        }
+        else if (type == 1)
+        {
+            food = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Food>();
+        }
+        else if (type == 2)
+        {
+            prop = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Propaganda>();
+        }
+        else if (type == 3)
+        {
+            crime = GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<Crime>();
+        }
+        else if (type == 4)
+        {
+            ign = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Ignorance>();
+        }
+        else if (type == 5)
+        {
+            inf = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Influence>();
+        }
     }
 
     public void Add()
@@ -49,6 +72,16 @@ public class Workers : MonoBehaviour
                     crime.police++;
                 }
             }
+            else if(type == 5)
+            {
+                if (pop.totalElites - pop.workingElites > 0)
+                {
+                    workers++;
+                    thisClick.val++;
+                    pop.workingElites++;
+                    inf.workers++;
+                }
+            }
             else
             {
                 if (pop.totalPeasants - pop.workingPeasants > 0)
@@ -60,9 +93,13 @@ public class Workers : MonoBehaviour
                     {
                         mat.workers++;
                     }
-                    else
+                    else if(type == 1)
                     {
                         food.workers++;
+                    }
+                    else if(type == 4)
+                    {
+                        ign.workers++;
                     }
                 }
             }
@@ -96,9 +133,19 @@ public class Workers : MonoBehaviour
                 prop.workers -= sub;
                 pop.workingElites -= sub;
             }
-            else
+            else if(type == 3)
             {
                 crime.police -= sub;
+                pop.workingElites -= sub;
+            }
+            else if(type == 4)
+            {
+                ign.workers -= sub;
+                pop.workingPeasants -= sub;
+            }
+            else if(type == 5)
+            {
+                inf.workers -= sub;
                 pop.workingElites -= sub;
             }
         }
@@ -108,7 +155,7 @@ public class Workers : MonoBehaviour
 
     public void Maximize()
     {
-        if(type == 2 || type == 3)
+        if(type == 2 || type == 3 || type == 5)
         {
             if((pop.totalElites - pop.workingElites) > (maxWorkers - workers))
             {
@@ -121,9 +168,13 @@ public class Workers : MonoBehaviour
                 {
                     prop.workers += dif;
                 }
-                else
+                else if(type == 3)
                 {
                     crime.police += dif;
+                }
+                else if(type == 5)
+                {
+                    inf.workers += dif;
                 }
             }
             else
@@ -137,9 +188,13 @@ public class Workers : MonoBehaviour
                 {
                     prop.workers += unemployed;
                 }
-                else
+                else if (type == 3)
                 {
                     crime.police += unemployed;
+                }
+                else if (type == 5)
+                {
+                    inf.workers += unemployed;
                 }
             }
         }
@@ -156,9 +211,13 @@ public class Workers : MonoBehaviour
                 {
                     mat.workers += dif;
                 }
-                else
+                else if(type == 1)
                 {
                     food.workers += dif;
+                }
+                else if(type == 4)
+                {
+                    ign.workers += dif;
                 }
             }
             else
@@ -172,9 +231,13 @@ public class Workers : MonoBehaviour
                 {
                     mat.workers += unemployed;
                 }
-                else
+                else if (type == 1)
                 {
                     food.workers += unemployed;
+                }
+                else if (type == 4)
+                {
+                    ign.workers += unemployed;
                 }
             }
         }
@@ -204,6 +267,16 @@ public class Workers : MonoBehaviour
             crime.police -= workers;
             pop.workingElites -= workers;
         }
+        else if (type == 4)
+        {
+            ign.workers -= workers;
+            pop.workingPeasants -= workers;
+        }
+        else if (type == 5)
+        {
+            inf.workers -= workers;
+            pop.workingElites -= workers;
+        }
 
         thisClick.val = 0;
         workers = 0;
@@ -216,6 +289,31 @@ public class Workers : MonoBehaviour
         if (thisClick.typeForChange != type)
         {
             type = thisClick.typeForChange;
+
+            if (type == 0)
+            {
+                mat = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Materials>();
+            }
+            else if (type == 1)
+            {
+                food = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Food>();
+            }
+            else if (type == 2)
+            {
+                prop = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Propaganda>();
+            }
+            else if (type == 3)
+            {
+                crime = GameObject.FindGameObjectWithTag("BalanceManager").GetComponent<Crime>();
+            }
+            else if (type == 4)
+            {
+                ign = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Ignorance>();
+            }
+            else if (type == 5)
+            {
+                inf = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<Influence>();
+            }
         }
     }
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BuildGroups : MonoBehaviour
 {
+    public List<string> allBuildingNames = new List<string>();
+
     public List<GameObject> peasantHousingBuildings = new List<GameObject>();
     public List<GameObject> eliteHousingBuildings = new List<GameObject>();
     public List<GameObject> materialGatheringBuildings = new List<GameObject>();
@@ -36,6 +38,8 @@ public class BuildGroups : MonoBehaviour
         {
             otherBuildings.Add(building);
         }
+
+        allBuildingNames.Add(building.GetComponent<Building>().buildingName);
     }
 
     public void RemoveFromList(GameObject building, int type)
@@ -64,5 +68,7 @@ public class BuildGroups : MonoBehaviour
         {
             otherBuildings.Remove(building);
         }
+
+        allBuildingNames.Remove(building.GetComponent<Building>().buildingName);
     }
 }

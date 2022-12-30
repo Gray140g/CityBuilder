@@ -5,6 +5,7 @@ using TMPro;
 public class Calendar : MonoBehaviour
 {
     [SerializeField] private DayCount count;
+    [SerializeField] private WorkHours workTime;
 
     [SerializeField] private TextMeshProUGUI dateDisplay;
     [SerializeField] private TextMeshProUGUI clockDisplay;
@@ -16,7 +17,7 @@ public class Calendar : MonoBehaviour
     private int day = 7;
     private int year = 1917;
 
-    private int hour = 6;
+    public int hour = 6;
     private int min = 0;
 
     private void Start()
@@ -62,6 +63,32 @@ public class Calendar : MonoBehaviour
         }
     }
 
+    private void AddHour()
+    {
+        if (hour < 24)
+        {
+            hour += 1;
+
+            if(hour == workTime.workHoursStart)
+            {
+                workTime.StartWork();
+            }
+            else if(hour == workTime.workHoursEnd || hour == workTime.tempWorkEnd)
+            {
+                workTime.EndWork();
+            }
+
+            DisplayClock();
+            count.UpdateChangesHour();
+            StartCoroutine("AddMinute");
+        }
+        else
+        {
+            hour = 1;
+            AddDay();
+        }
+    }
+
     private IEnumerator AddMinute()
     {
         yield return new WaitForSeconds(.5f);
@@ -74,19 +101,7 @@ public class Calendar : MonoBehaviour
         else
         {
             min = 0;
-            
-            if(hour < 24)
-            {
-                hour += 1;
-                DisplayClock();
-                count.UpdateChangesHour();
-                StartCoroutine("AddMinute");
-            }
-            else
-            {
-                hour = 1;
-                AddDay();
-            }
+            AddHour();
         }
     }
 

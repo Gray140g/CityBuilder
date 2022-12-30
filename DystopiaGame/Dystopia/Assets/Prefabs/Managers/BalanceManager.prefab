@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8563912d19bbde49a7466a2bf9b47cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crime: {fileID: 0}
+  crime: {fileID: 7399355770387130186}
   pop: {fileID: 0}
   food: {fileID: 0}
+  stats: {fileID: 0}
+  quests: {fileID: 0}
   balance: 0
   happiness: 50
   fear: 0
@@ -57,6 +59,13 @@ MonoBehaviour:
   happinessSlider: {fileID: 0}
   fearSlider: {fileID: 0}
   patriotismSlider: {fileID: 0}
+  balanceBackgroundSlider: {fileID: 0}
+  happinessBackgroundSlider: {fileID: 0}
+  fearBackgroundSlider: {fileID: 0}
+  patriotismBackgroundSlider: {fileID: 0}
+  balanceBarsNeedsToLerp: 00000000000000000000000000000000
+  barSpeed: 0.13
+  closeVal: 0.01
 --- !u!114 &7399355770387130186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2208359008315455381}
   - component: {fileID: 6930250593909843571}
+  - component: {fileID: 9216175003147426851}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -137,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c3bf6b9bab4d44bace72ab15800bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 9216175003147426851}
+  activeQuests: []
+  bars: []
   questSlots:
   - {fileID: 0}
   - {fileID: 0}
@@ -145,3 +158,16 @@ MonoBehaviour:
   canvas: {fileID: 0}
   questPrefab: {fileID: 7114537228854766033, guid: 98e2f486c4c64ab4590579d26e9c95c2,
     type: 3}
+--- !u!114 &9216175003147426851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589453007906184216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50db6b55814d68246b8d89dc94fdf907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 6930250593909843571}

@@ -43,7 +43,7 @@ public class Factory : MonoBehaviour
 
     public void OnPlace()
     {
-        mat.dailyMaterials += newMaterials;
+        mat.hourlyMaterials += newMaterials;
         mat.maxWorkers += workStation.maxWorkers;
         workStation.thisClick.maxVal = workStation.maxWorkers;
         parentBuilding.justPlaced = false;
@@ -53,10 +53,20 @@ public class Factory : MonoBehaviour
     {
         if(!parentBuilding.beingPlaced)
         {
-            mat.workers -= workStation.workers;
-            mat.maxWorkers -= workStation.maxWorkers;
             pop.workingPeasants -= workStation.workers;
-            mat.dailyMaterials -= newMaterials;
+
+            if(type == 0)
+            {
+                mat.hourlyMaterials -= newMaterials;
+                mat.workers -= workStation.workers;
+                mat.maxWorkers -= workStation.maxWorkers;
+            }
+            else
+            {
+                food.hourlyFood -= newFood;
+                food.workers -= workStation.workers;
+                food.maxWorkers -= workStation.maxWorkers;
+            }
         }
     }
 
@@ -72,9 +82,9 @@ public class Factory : MonoBehaviour
 
                 food.workers -= workStation.workers;
                 food.maxWorkers -= workStation.maxWorkers;
-                food.dailyFood -= newFood;
+                food.hourlyFood -= newFood;
 
-                mat.dailyMaterials += newMaterials;
+                mat.hourlyMaterials += newMaterials;
                 mat.maxWorkers += workStation.maxWorkers;
                 mat.workers += workStation.workers;
 
@@ -85,9 +95,9 @@ public class Factory : MonoBehaviour
             {
                 mat.workers -= workStation.workers;
                 mat.maxWorkers -= workStation.maxWorkers;
-                mat.dailyMaterials -= newMaterials;
+                mat.hourlyMaterials -= newMaterials;
 
-                food.dailyFood += newFood;
+                food.hourlyFood += newFood;
                 food.maxWorkers += workStation.maxWorkers;
                 food.workers += workStation.workers;
 

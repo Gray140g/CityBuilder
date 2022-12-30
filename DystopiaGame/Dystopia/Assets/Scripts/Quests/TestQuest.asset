@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: TestQuest
   m_EditorClassIdentifier: 
   display: {fileID: 0}
+  manager: {fileID: 0}
+  groups: {fileID: 0}
+  content: {fileID: 0}
+  type: 0
+  buildingNamesToSearch:
+  - Peasant House
+  - Peasant House
+  - Elite House
+  individualCompleted: 000000
+  indexesToIgnore: 640000006400000064000000
+  balanceType: 0
+  neededBalance: 0
   questName: Test
   individualQuests:
   - -Build 2 Peasant Houses
-  - -Build 2 Elite Houses
+  - -Build 1 Elite House
