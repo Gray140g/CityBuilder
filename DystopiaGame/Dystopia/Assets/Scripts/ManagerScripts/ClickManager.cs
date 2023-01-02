@@ -53,10 +53,7 @@ public class ClickManager : MonoBehaviour
                 {
                     if(current != null)
                     {
-                        if(current.outline != null)
-                        {
-                            current.outline.SetActive(false);
-                        }
+                        current.outline.SetActive(false);
                     }
 
                     current = collisions[0];
@@ -112,10 +109,7 @@ public class ClickManager : MonoBehaviour
             currentType = type;
             opener.editIsOpen = true;
 
-            if(current.outline != null)
-            {
-                current.outline.SetActive(true);
-            }
+            current.outline.SetActive(true);
         }
     }
 

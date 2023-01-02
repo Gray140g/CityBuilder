@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5219746928952765054}
   - component: {fileID: 9002630184471370529}
   - component: {fileID: 3262594533422296080}
+  - component: {fileID: 2246445399424640723}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 0}
+  workTime: {fileID: 0}
   dateDisplay: {fileID: 0}
   clockDisplay: {fileID: 0}
   months:
@@ -77,6 +79,21 @@ MonoBehaviour:
   - Nov
   - Dec
   daysInMonth: 1f0000001c0000001f0000001e0000001f0000001e0000001f0000001f0000001e0000001f0000001e0000001f000000
+  hour: 6
+--- !u!114 &2246445399424640723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106331535384799872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe0f985991301140ad16cab3da04a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 9002630184471370529}
+  menu: {fileID: 0}
 --- !u!1 &3094743972458215457
 GameObject:
   m_ObjectHideFlags: 0

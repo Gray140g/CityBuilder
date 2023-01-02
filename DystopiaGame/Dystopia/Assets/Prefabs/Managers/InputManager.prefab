@@ -91,8 +91,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7362573725824249472}
+        m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 80b6ac49-1a15-4c39-aeb1-cff44e65f5cb
-    m_ActionName: Player/Place/Select[/Mouse/leftButton]
+    m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9007489148445227214}
@@ -126,17 +138,69 @@ MonoBehaviour:
     m_ActionId: 115fce87-9434-42ec-8d90-ba4ff4a151da
     m_ActionName: Player/Zoom[/Keyboard/i,/Keyboard/o]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4898578240812357807}
+        m_TargetAssemblyTypeName: CursorMove, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4a346911-b62f-42c6-ae31-0847d2edac51
     m_ActionName: Player/CursorMove
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Commands, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 12af9b3f-86be-4e75-b3d8-49ddc1096f2c
     m_ActionName: Player/Command[/Keyboard/slash]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9007489148445227214}
+        m_TargetAssemblyTypeName: BuildPlacement, Assembly-CSharp
+        m_MethodName: EndBuilding
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6bfe7f02-7563-42f7-b947-9016504b1b9c
     m_ActionName: Player/EndBuild[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PressPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 31ec21b5-3015-470b-993b-2335b505f719
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -160,7 +224,6 @@ MonoBehaviour:
   camObject: {fileID: 0}
   speed: 400
   zoomSpeed: 0.1
-  zoomTowards: 0
   zoomPerFrame: 0.25
   step: 10
   min: 2
@@ -201,6 +264,7 @@ MonoBehaviour:
   cursor: {fileID: 0}
   click: {fileID: 7362573725824249472}
   grouping: {fileID: 0}
+  quests: {fileID: 0}
   opener: {fileID: 0}
   buildMenu: {fileID: 0}
   menuObjects:
