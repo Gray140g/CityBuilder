@@ -33,7 +33,6 @@ public class BuildPlacement : MonoBehaviour
     [SerializeField] private Tilemap map;
 
     private Materials mat;
-    [SerializeField] private LossText lossAnim;
 
     [SerializeField] private Color red;
     [SerializeField] private Color green;
@@ -155,7 +154,6 @@ public class BuildPlacement : MonoBehaviour
                 grouping.AddToList(buildingObject, buildingScript.typeInt);
                 buildTime.OnPlace();
                 mat.materials -= currentCost;
-                lossAnim.StartAnimation(-currentCost, 3);
                 onCoolDown = true;
                 StartBuild(currentBuildingType);
                 quests.TryToComplete();

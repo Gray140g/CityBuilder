@@ -1,40 +1,64 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using UnityEngine;
 
-public static class SaveSystem
+public class SaveSystem
 {
-    public static void Save(BuildingLoad buildLoad)
+    public static bool Save(string saveName, object saveData)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
+        BinaryFormatter formatter = GetBinaryFormatter();
+        if(!Directory.Exists(Application.persistentDataPath + "/saves"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/saves");
+        }
 
-        string path = Application.persistentDataPath + "/data.dys";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        string path = Application.persistentDataPath + "/saves/" + saveName + ".save";
 
-        SaveData data = new SaveData(buildLoad);
+        FileStream file = File.Create(path);
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+        formatter.Serialize(file, saveData);
+
+        file.Close();
+
+        return true;
     }
 
-    public static SaveData Load()
+    public static object Load(string path)
     {
-        string path = Application.persistentDataPath + "/data.dys";
-
-        if (File.Exists(path))
+        if(!File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            SaveData data = formatter.Deserialize(stream) as SaveData;
-            stream.Close();
-
-            return data;
-        }
-        else
-        {
-            Debug.Log("Save file not found in " + path);
             return null;
         }
+
+        BinaryFormatter formatter = GetBinaryFormatter();
+        FileStream file = File.Open(path, FileMode.Open);
+
+        try
+        {
+            object save = formatter.Deserialize(file);
+            file.Close();
+            return save;
+        }
+        catch
+        {
+            Debug.LogErrorFormat("Failed to load file at (0)", path);
+            file.Close();
+            return null;
+        }
+    }
+
+    public static BinaryFormatter GetBinaryFormatter()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        SurrogateSelector selector = new SurrogateSelector();
+
+        Vector3SerializationSurrogate vectorSurrogate = new Vector3SerializationSurrogate();
+
+        selector.AddSurrogate(typeof(Vector3), new StreamingContext(StreamingContextStates.All), vectorSurrogate);
+
+        formatter.SurrogateSelector = selector;
+
+        return formatter;
     }
 }

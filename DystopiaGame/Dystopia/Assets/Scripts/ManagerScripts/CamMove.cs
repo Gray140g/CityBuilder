@@ -15,6 +15,7 @@ public class CamMove : MonoBehaviour
 
     [SerializeField] private float zoomSpeed;
     [SerializeField] private float zoomPerFrame;
+    [SerializeField] private float wheelZoom;
     private float zoomTowards = 0;
     private int needToZoom = 0;
 
@@ -117,6 +118,39 @@ public class CamMove : MonoBehaviour
             {
                 zoomTowards = 0;
                 needToZoom = 0;
+            }
+        }
+    }
+
+    public void ZoomWithWheel(InputAction.CallbackContext ctx)
+    {
+        if (!opener.buildIsOpen && !opener.commandIsOpen)
+        {
+            if (ctx.performed)
+            {
+                if (ctx.ReadValue<float>() > 0)
+                {
+                    if (cam.orthographicSize + wheelZoom < max)
+                    {
+                        cam.orthographicSize += wheelZoom;
+                    }
+                    else
+                    {
+                        cam.orthographicSize = max;
+                    }
+                }
+
+                if (ctx.ReadValue<float>() < 0)
+                {
+                    if (cam.orthographicSize - wheelZoom > min)
+                    {
+                        cam.orthographicSize -= wheelZoom;
+                    }
+                    else
+                    {
+                        cam.orthographicSize = min;
+                    }
+                }
             }
         }
     }

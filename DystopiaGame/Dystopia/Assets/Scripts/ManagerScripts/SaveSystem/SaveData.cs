@@ -1,18 +1,28 @@
 using UnityEngine;
 
 [System.Serializable]
-public class SaveData : MonoBehaviour
+public class SaveData
 {
-    public int[] placedBuildingIDs;
-    public float[] xCoords;
-    public float[] yCoords;
-    public float[] zCoords;
-
-    public SaveData(BuildingLoad buildLoad)
+    private static SaveData _current;
+    public static SaveData current
     {
-        placedBuildingIDs = buildLoad.placedBuildingIDs.ToArray();
-        xCoords = buildLoad.xCoords.ToArray();
-        yCoords = buildLoad.yCoords.ToArray();
-        zCoords = buildLoad.zCoords.ToArray();
+        get
+        {
+            if(_current == null)
+            {
+                _current = new SaveData();
+            }
+
+            return _current;
+        }
+        set
+        {
+            if(value != null)
+            {
+                _current = value;
+            }
+        }
     }
+
+    public BuildingLoad buildings = new BuildingLoad();
 }

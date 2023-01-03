@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +8,8 @@ public class ClickManager : MonoBehaviour
 {
     [SerializeField] private BuildPlacement placement;
     [SerializeField] private MenuOpener opener;
+    [SerializeField] private ResourceInfo resource;
+
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject clicker;
     [SerializeField] private GameObject cursor;
@@ -80,6 +81,8 @@ public class ClickManager : MonoBehaviour
         if(!opener.buildIsOpen && !opener.inInfo)
         {
             ClearScreens(type);
+
+            resource.type = 100;
 
             nameText.text = name;
             buildingImages[type].sprite = image;

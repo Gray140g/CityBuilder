@@ -2,28 +2,40 @@ using UnityEngine;
 
 public class BuildingData : MonoBehaviour
 {
-    private BuildingLoad buildLoad;
-
     public int prefabID;
+    public Vector3 pos;
 
-    public float x;
-    public float y;
-    public float z;
-
-    private void Start()
-    {
-        buildLoad = GameObject.FindGameObjectWithTag("GameManager").GetComponent<BuildingLoad>();
-    }
+    public int index = -1;
 
     public void OnPlace()
     {
-        x = gameObject.transform.position.x;
-        y = gameObject.transform.position.y;
-        z = gameObject.transform.position.z;
+        pos = gameObject.transform.position;
 
-        buildLoad.placedBuildingIDs.Add(prefabID);
-        buildLoad.xCoords.Add(x);
-        buildLoad.yCoords.Add(y);
-        buildLoad.zCoords.Add(z);
+        SaveData.current.buildings.placedBuildingIDs.Add(prefabID);
+        SaveData.current.buildings.coords.Add(pos);
+
+        for (int i = 0; i < SaveData.current.buildings.coords.Count; i++)
+        {
+            if(index < 0)
+            {
+                if (SaveData.current.buildings.coords[i] == pos)
+                {
+                    index = i;
+                }
+            }
+        }
+    }
+
+    public void OnDestroy()
+    {
+        SaveData.current.buildings.placedBuildingIDs.RemoveAt(index);
+        SaveData.current.buildings.coords.RemoveAt(index);
+    }
+
+    public void OnMove()
+    {
+        pos = gameObject.transform.position;
+
+        SaveData.current.buildings.coords[index] = pos;
     }
 }

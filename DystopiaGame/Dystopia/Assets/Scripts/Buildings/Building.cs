@@ -9,6 +9,8 @@ public class Building : MonoBehaviour
     [SerializeField] private GameObject clickCollider;
     public GameObject outline;
 
+    public BuildingData data;
+
     public Vector3 offSet;
     public Vector3 permanentOffSet;
 
@@ -60,15 +62,14 @@ public class Building : MonoBehaviour
 
     public void EditPlace()
     {
-        if(outline != null)
-        {
-            outline.SetActive(false);
-        }
+        outline.SetActive(false);
+        data.OnMove();
     }
 
     public void DestroySelf()
     {
         destroyed = true;
+        data.OnDestroy();
         Destroy(gameObject);
     }
 }

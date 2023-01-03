@@ -23,7 +23,7 @@ public class BuildTime : MonoBehaviour
     public void OnPlace()
     {
         StartCoroutine("TimeTick");
-        //data.OnPlace();
+        data.OnPlace();
         render.sprite = inProgressSprite;
         if(outline != null)
         {

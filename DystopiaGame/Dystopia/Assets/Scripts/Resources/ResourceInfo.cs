@@ -19,7 +19,7 @@ public class ResourceInfo : MonoBehaviour
 
     [SerializeField] private MenuOpener opener;
 
-    private int type;
+    public int type;
 
     private void Update()
     {
@@ -46,7 +46,7 @@ public class ResourceInfo : MonoBehaviour
             desc.text = "Total Food: " + food.food + "\nHourly Gain: " + food.hourlyFood + "\nConsumption: " + food.eat +
                 "\n-----------------------------------\nWorkers: " + food.workers + "\nMax Workers: " + food.maxWorkers;
         }
-        else
+        else if (type == 3)
         {
             resourceName.text = "Money";
             icon.sprite = matSprite;

@@ -372,6 +372,7 @@ MonoBehaviour:
   thisCollider: {fileID: 7271458725803329658}
   clickCollider: {fileID: 2378136490871344126}
   outline: {fileID: 4513285577189986460}
+  data: {fileID: 1198884274718139570}
   offSet: {x: 0.5, y: 0.5, z: 0}
   permanentOffSet: {x: 0, y: 0, z: 0}
   buildingName: Peasant House
@@ -458,9 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabID: 0
-  x: 0
-  y: 0
-  z: 0
+  pos: {x: 0, y: 0, z: 0}
 --- !u!1 &4513285577189986460
 GameObject:
   m_ObjectHideFlags: 0

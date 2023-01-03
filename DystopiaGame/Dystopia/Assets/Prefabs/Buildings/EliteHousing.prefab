@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 7510543994070397464}
   - component: {fileID: -8604350206984860570}
   - component: {fileID: 6988567797737941559}
+  - component: {fileID: 2942274930164888558}
   m_Layer: 6
   m_Name: EliteHousing
   m_TagString: Building
@@ -468,6 +469,20 @@ MonoBehaviour:
   - {fileID: 3505587013796334739, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
   - {fileID: -4149451980576804623, guid: 65ed0e8b38d76fc4886032fa14d72af2, type: 3}
   isOutline: 0
+--- !u!114 &2942274930164888558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597222852011272294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81bd572a4de460469596e648e1f88a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabID: 1
+  pos: {x: 0, y: 0, z: 0}
 --- !u!1 &7367006256060952462
 GameObject:
   m_ObjectHideFlags: 0
