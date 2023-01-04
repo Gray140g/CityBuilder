@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &345064538266811550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3542959720875054173}
+  - component: {fileID: 3681584814109837743}
+  - component: {fileID: 9039020607422567870}
+  m_Layer: 0
+  m_Name: BuildingManager
+  m_TagString: BuildingManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3542959720875054173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345064538266811550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3681584814109837743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345064538266811550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d5838a1bf8b949a19cf73f59509be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peasantHousingBuildings: []
+  eliteHousingBuildings: []
+  materialGatheringBuildings: []
+  foodGatheringBuildings: []
+  eliteWorkBuildings: []
+  otherBuildings: []
+--- !u!114 &9039020607422567870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345064538266811550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4728b942202b599409ba08c773e44dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  techTreeButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildMenuButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  parentIndex: 6400000000000000640000006400000003000000
+  isUnlocked: 0101010101
+  costs: 3200000064000000190000003200000032000000
+  icons:
+  - {fileID: 21300000, guid: 9f0f95fbf9d84b9478bc85f01304a849, type: 3}
+  - {fileID: 21300000, guid: 8954925c0b90f55449279dabeddc017f, type: 3}
+  - {fileID: 21300000, guid: 19f8b6849882e28479a9dc76e7d62723, type: 3}
+  - {fileID: 21300000, guid: 8e2465f8c0215814096f4d34a90949cb, type: 3}
+  - {fileID: 21300000, guid: 406219dce136edc4dabd8ce0bb19d45a, type: 3}
+  names:
+  - Factory
+  - Propaganda Factory
+  - School
+  - Police Station
+  - Prison
+  descriptions:
+  - Factory
+  - Propaganda
+  - School
+  - Police
+  - Prison
+  icon: {fileID: 0}
+  buildName: {fileID: 0}
+  desc: {fileID: 0}
+  mat: {fileID: 0}

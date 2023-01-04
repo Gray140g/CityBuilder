@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3837695273036728328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7809475874677974290}
+  - component: {fileID: 7962343113162510298}
+  - component: {fileID: 6089210204482081587}
+  - component: {fileID: 3422659334457777863}
+  - component: {fileID: 2925523023393658030}
+  - component: {fileID: -8710251550617908026}
+  - component: {fileID: 8694995395696300810}
+  - component: {fileID: 1854897049818861078}
+  - component: {fileID: 4297256857966277368}
+  - component: {fileID: 4834678690202966862}
+  - component: {fileID: 8600492856923775653}
+  - component: {fileID: 8541483483507918408}
+  - component: {fileID: 7968222423742737671}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: ResourceManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7809475874677974290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7962343113162510298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b27520e3602a0d4186dcdc5601d3f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workTime: {fileID: 8600492856923775653}
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  ign: {fileID: 8541483483507918408}
+  inf: {fileID: 7968222423742737671}
+  prop: {fileID: 1854897049818861078}
+  content: {fileID: 0}
+  crime: {fileID: 0}
+--- !u!114 &6089210204482081587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc7b3eb21f6e8d41b58276d46b2ef0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  ign: {fileID: 8541483483507918408}
+  inf: {fileID: 7968222423742737671}
+  eliteText: {fileID: 0}
+  peasantText: {fileID: 0}
+  foodText: {fileID: 0}
+  materialsText: {fileID: 0}
+  ignoranceText: {fileID: 0}
+  influenceText: {fileID: 0}
+--- !u!114 &3422659334457777863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecfa07aeb0c1bb4682da541222ffd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceName: {fileID: 0}
+  desc: {fileID: 0}
+  icon: {fileID: 0}
+  eliteSprite: {fileID: 21300000, guid: 7b3e2f97303ddbd40b1c7b0fbad3f689, type: 3}
+  peasantSprite: {fileID: 21300000, guid: 0fd77ff996e3cf644a952e397e8d8287, type: 3}
+  foodSprite: {fileID: 21300000, guid: 56c1a84a1b03b864fbaf2e9cd95b5937, type: 3}
+  matSprite: {fileID: 21300000, guid: eafd6da71fe19004db99dfd4611ad0f4, type: 3}
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+  mat: {fileID: 8694995395696300810}
+  opener: {fileID: 0}
+--- !u!114 &2925523023393658030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d27655873bcc4c409a1eaf8532135f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grouping: {fileID: 0}
+  totalPeasants: 50
+  housedPeasants: 40
+  homelessPeasants: 10
+  workingPeasants: 0
+  totalElites: 25
+  housedElites: 0
+  homelessElites: 25
+  workingElites: 0
+  availablePeasantHousing: 0
+  totalPeasantHousing: 40
+  availableEliteHousing: 0
+  totalEliteHousing: 0
+--- !u!114 &-8710251550617908026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8118e47995a49242bf0bc35da1eaa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  stats: {fileID: 0}
+  lossAnim: {fileID: 0}
+  food: 200
+  hourlyFood: 0
+  maxWorkers: 0
+  workers: 0
+  eat: 0
+--- !u!114 &8694995395696300810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bcc8686661d6c343bb9a4bbd27c3b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  lossAnim: {fileID: 0}
+  materials: 200
+  hourlyMaterials: 0
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &1854897049818861078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90860ec29e157434c85f2d055670112b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 0}
+  propType: 0
+  propAmount: 0
+  dailyProp: 0
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &4297256857966277368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171843b54adba247bc1b07953c4cb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deactivation:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  green: {r: 0.04209684, g: 0.8113208, b: 0.04209684, a: 1}
+  red: {r: 0.9607844, g: 0.10588236, b: 0.10588236, a: 1}
+--- !u!114 &4834678690202966862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd84d21b96a8a047a6783df004a373f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  food: {fileID: -8710251550617908026}
+--- !u!114 &8600492856923775653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d5891428e4e9148a02ccf01316d4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cal: {fileID: 0}
+  content: {fileID: 0}
+  workHoursStart: 6
+  workHoursEnd: 20
+  tempWorkEnd: 0
+  workHours: 1
+  workButton: {fileID: 0}
+  homeButton: {fileID: 0}
+--- !u!114 &8541483483507918408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9182ab917b1f4f843ce136d70a86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  tree: {fileID: 0}
+  ignorance: 25
+  hourlyIgnorance: 1
+  maxWorkers: 0
+  workers: 0
+--- !u!114 &7968222423742737671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837695273036728328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347aa698badd2b4408e1d29cbc753c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 2925523023393658030}
+  influence: 25
+  hourlyInfluence: 0
+  maxWorkers: 0
+  workers: 0
