@@ -30,7 +30,10 @@ public class BuildClick : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Clicker"))
         {
-            click.collisions.Add(this);
+            if(click != null)
+            {
+                click.collisions.Add(this);
+            }
         }
     }
 
