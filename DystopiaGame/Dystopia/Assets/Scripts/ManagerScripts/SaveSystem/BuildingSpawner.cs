@@ -31,6 +31,8 @@ public class BuildingSpawner : MonoBehaviour
                 }
             }
 
+            data.pos = pos;
+
             data.rotateIndex = SaveData.current.buildings.rotateIndex[i];
             data.LoadRotations();
 
@@ -38,6 +40,9 @@ public class BuildingSpawner : MonoBehaviour
 
             buildingScript.outline.SetActive(false);
             data.index = i;
+            data.indexFloat = i;
+
+            Debug.Log(i + ": " + SaveData.current.buildings.coords[i]);
         }
     }
 

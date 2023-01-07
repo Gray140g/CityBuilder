@@ -16,16 +16,16 @@ MonoBehaviour:
   manager: {fileID: 0}
   groups: {fileID: 0}
   content: {fileID: 0}
+  questName: Housing
+  individualQuests:
+  - -Build 2 Peasant Houses
+  - -Build 1 Elite House
   type: 0
   buildingNamesToSearch:
   - Peasant House
   - Peasant House
   - Elite House
-  individualCompleted: 000000
-  indexesToIgnore: 640000006400000064000000
+  individualCompleted: 010101
+  indexesToIgnore: 000000000800000001000000
   balanceType: 0
   neededBalance: 0
-  questName: Test
-  individualQuests:
-  - -Build 2 Peasant Houses
-  - -Build 1 Elite House

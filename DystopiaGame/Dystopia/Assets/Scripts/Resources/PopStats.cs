@@ -7,8 +7,8 @@ public class PopStats : MonoBehaviour
     [SerializeField] private Food food;
 
     //famished, starving, hungry, content, full, satisfied, stuffed
-    private List<int> peasantHungerLevels = new List<int>();
-    private List<int> eliteHungerLevels = new List<int>();
+    public List<int> peasantHungerLevels = new List<int>();
+    public List<int> eliteHungerLevels = new List<int>();
 
     private void Start()
     {

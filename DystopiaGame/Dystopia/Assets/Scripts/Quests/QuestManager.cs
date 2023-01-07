@@ -6,6 +6,13 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private QuestDisplay display;
     private List<QuestBar> activeQuests = new List<QuestBar>();
 
+    [SerializeField] private QuestBar firstQuest;
+
+    private void Start()
+    {
+        display.ActivateQuest(firstQuest);
+    }
+
     public void TryToComplete()
     {
         for (int i = 0; i < activeQuests.Count; i++)

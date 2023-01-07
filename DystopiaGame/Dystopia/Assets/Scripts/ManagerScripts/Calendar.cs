@@ -13,12 +13,12 @@ public class Calendar : MonoBehaviour
     [SerializeField] private string[] months;
     [SerializeField] private int[] daysInMonth;
 
-    private int currentIndex = 10;
-    private int day = 7;
-    private int year = 1917;
+    public int currentIndex = 10;
+    public int day = 7;
+    public int year = 1917;
 
     public int hour = 6;
-    private int min = 0;
+    public int min = 0;
 
     private void Start()
     {
@@ -91,7 +91,7 @@ public class Calendar : MonoBehaviour
 
     private IEnumerator AddMinute()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
         if(min < 59)
         {
             min += 1;
@@ -107,6 +107,6 @@ public class Calendar : MonoBehaviour
 
     public IEnumerator WeekCount()
     {
-        yield return new WaitForSeconds(5040);
+        yield return new WaitForSeconds(2520);
     }
 }

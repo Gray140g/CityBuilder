@@ -14,10 +14,10 @@ public class Population : MonoBehaviour
     public int homelessElites;
     public int workingElites;
 
-    [SerializeField] private int availablePeasantHousing;
-    [SerializeField] private int totalPeasantHousing;
-    [SerializeField] private int availableEliteHousing;
-    [SerializeField] private int totalEliteHousing;
+    public int availablePeasantHousing;
+    public int totalPeasantHousing;
+    public int availableEliteHousing;
+    public int totalEliteHousing;
 
     #region AddPopulation
 

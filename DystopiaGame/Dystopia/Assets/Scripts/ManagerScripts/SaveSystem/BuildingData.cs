@@ -18,6 +18,7 @@ public class BuildingData : MonoBehaviour
     public bool hasColliderRotate;
 
     public int index = -1;
+    [HideInInspector] public float indexFloat = -1;
 
     private void Start()
     {
@@ -37,7 +38,14 @@ public class BuildingData : MonoBehaviour
         SaveData.current.buildings.rotateIndex.Add(rotateIndex);
         SaveData.current.buildings.hasColliderRotate.Add(hasColliderRotate);
 
-        CheckIndex();
+        for (int i = 0; i < SaveData.current.buildings.coords.Count; i++)
+        {
+            if(pos == SaveData.current.buildings.coords[i])
+            {
+                index = i;
+                indexFloat = index;
+            }
+        }
     }
 
     public void OnDestroy()
@@ -54,7 +62,7 @@ public class BuildingData : MonoBehaviour
             for (int i = index; i < groups.allBuildings.Count; i++)
             {
                 BuildingData data = groups.allBuildings[i].GetComponent<BuildingData>();
-                data.CheckIndex();
+                data.CheckIndex(index);
             }
 
             Destroy(gameObject);
@@ -92,20 +100,12 @@ public class BuildingData : MonoBehaviour
         }
     }
 
-    public void CheckIndex()
+    public void CheckIndex(int start)
     {
-        pos = gameObject.transform.position;
-        index = -1;
-
-        for (int i = 0; i < SaveData.current.buildings.coords.Count; i++)
+        if(index > start)
         {
-            if(index < 0)
-            {
-                if (SaveData.current.buildings.coords[i] == pos)
-                {
-                    index = i;
-                }
-            }
+            indexFloat -= .5f;
+            index = (int)indexFloat;
         }
     }
 }
