@@ -15,6 +15,16 @@ public class ResourceSave : MonoBehaviour
     private void Start()
     {
         OnLoad();
+
+        if(pop.totalPeasants == 0 && pop.totalElites == 0 && food.food == 0 && mat.materials == 0)
+        {
+            pop.totalPeasants = 50;
+            pop.homelessPeasants = 50;
+            pop.totalElites = 25;
+            pop.homelessElites = 25;
+            food.food = 240;
+            mat.materials = 200;
+        }
     }
 
     public void OnSave()
